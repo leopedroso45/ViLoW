@@ -13,14 +13,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-```
-Like this
-```
 - You'll need to install [Golang](https://golang.org/dl/) on your machine.
 - Now you'll need to install [Xampp](https://www.apachefriends.org) (Or manually install MySQL)
 - You can now clone this [repository](https://github.com/leopedroso45/VideoLocalManager) and import bootstrap into the web project.
 
-- You can enable apache server and mySQL and open the web interface.
+- Now you are available to enable apache server, golang Rest API server and mySQL to open the web interface.
+
+```
+go run main.go model.go
+```
 
 ## Built With
 
