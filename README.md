@@ -3,7 +3,7 @@ Local platform for managing and consuming videos stored on the hard disk.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
@@ -11,27 +11,16 @@ These instructions will get you a copy of the project up and running on your loc
 - mySQL
 - Bootstrap
 
-```
-Give examples
-```
-
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
 ```
-Give the example
+Like this
 ```
+- You'll need to install [Golang](https://golang.org/dl/) on your machine.
+- Now you'll need to install [Xampp](https://www.apachefriends.org) (Or manually install MySQL)
+- You can now clone this [repository](https://github.com/leopedroso45/VideoLocalManager) and import bootstrap into the web project.
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+- You can enable apache server and mySQL and open the web interface.
 
 ## Built With
 
