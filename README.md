@@ -14,6 +14,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Installing
 
 - You'll need to install [Golang](https://golang.org/dl/) on your machine.
+  You will need to define your GOPATH and those imports in the .go files.
 - Now you'll need to install [Xampp](https://www.apachefriends.org) (Or manually install MySQL)
 - You can now clone this [repository](https://github.com/leopedroso45/VideoLocalManager) and import bootstrap into the web project.
 
