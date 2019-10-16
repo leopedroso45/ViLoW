@@ -13,6 +13,24 @@ type Video struct {
 	NameVideo, PathVideo, DescVideo string
 }
 
+func insertVideoIntoDB(videoA Video) (result bool) {
+	fmt.Println("Iniciando aplicação...")
+	var con *sql.DB
+	con = db.CreateCon()
+	nome := videoA.NameVideo
+	path := videoA.PathVideo
+	desc := videoA.DescVideo
+
+	resultado, err := con.Query(`INSERT INTO video (name_video, path_video, desc_video) VALUES ('` + nome + `', '` + path + `', '` + desc + `');`)
+	if err != nil {
+		log.Fatal(err)
+		return false
+	} else {
+		defer resultado.Close()
+		return true
+	}
+}
+
 func getVideoFromDB() (videoSlice []Video) {
 
 	fmt.Println("Iniciando aplicação...")
