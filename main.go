@@ -8,8 +8,10 @@ import (
 	"github.com/gorilla/mux"
 )
 
-// função principal
+// main function
 func main() {
+
+	feedDBwVideo()
 	router := mux.NewRouter()
 	router.HandleFunc("/video", GetVideo).Methods("GET")
 	/**
@@ -17,11 +19,11 @@ func main() {
 	router.HandleFunc("/contato/{id}", CreatePerson).Methods("POST")
 	router.HandleFunc("/contato/{id}", DeletePerson).Methods("DELETE")
 	*/
-	log.Fatal(http.ListenAndServe(":8010", router))
+	log.Fatal(http.ListenAndServe(":8000", router))
 
 }
 
-/** */
+// "GetVideo to get all videos from DB"
 func GetVideo(w http.ResponseWriter, r *http.Request) {
 	//Allow CORS here By * or specific origin
 	w.Header().Set("Access-Control-Allow-Origin", "*")
