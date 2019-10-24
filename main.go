@@ -17,7 +17,7 @@ func main() {
 	router.HandleFunc("/contato/{id}", CreatePerson).Methods("POST")
 	router.HandleFunc("/contato/{id}", DeletePerson).Methods("DELETE")
 	*/
-	log.Fatal(http.ListenAndServe(":8000", router))
+	log.Fatal(http.ListenAndServe(":8010", router))
 
 }
 
