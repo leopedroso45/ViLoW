@@ -1,4 +1,4 @@
-# VideoLocalManager
+# VideoLocalManager (deprecated)
 Local platform for managing and consuming videos stored on the hard disk.
 
 ## Getting Started
