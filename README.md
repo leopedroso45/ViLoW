@@ -1,11 +1,10 @@
-# VideoLocalManager (deprecated)
+# VideoLocalManager
 
-[https://github.com/leopedroso45/VideoLocalManager/blob/master/web/frontWeb.PNG?raw=true]
-
-Local platform for managing and consuming videos stored on the hard disk.
+![alt text](https://github.com/leopedroso45/VideoLocalManager/blob/master/web/frontWeb.PNG)
 
 ## Getting Started
 
+Local platform for managing and consuming videos stored on the hard disk.
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
@@ -17,14 +16,16 @@ These instructions will get you a copy of the project up and running on your loc
 ### Installing
 
 - You'll need to install [Golang](https://golang.org/dl/) on your machine.
-  You will need to define your GOPATH and those imports in the .go files.
-- Now you'll need to install [Xampp](https://www.apachefriends.org) (Or manually install MySQL)
+  You will need to define your GOPATH and those imports in the .go files. (Make sure the path of the imported files conforms to your GOPATH.) 
+- You'll need to install [Xampp](https://www.apachefriends.org) (Or manually install MySQL)
 - You can now clone this [repository](https://github.com/leopedroso45/VideoLocalManager) and import bootstrap into the web project.
+
+- [ **Finally, you can now set the path to the folder where you store your videos and the path in the feedDB.go file so that it can identify them.** ]
 
 - Now you are available to enable apache server, golang Rest API server and mySQL to open the web interface.
 
 ```
-go run main.go model.go
+go run main.go model.go feedDB.go
 ```
 
 ## Built With
@@ -35,7 +36,7 @@ go run main.go model.go
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://gist.github.com/) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
