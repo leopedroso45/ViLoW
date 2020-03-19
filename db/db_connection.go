@@ -10,7 +10,7 @@ import (
 
 /*Create mysql connection*/
 func CreateCon() *sql.DB {
-	db, err := sql.Open("mysql", "root:@tcp(localhost:3306)/videos")
+	db, err := sql.Open("mysql", "root:password@tcp(localhost:3306)/videos")
 	if err != nil {
 		fmt.Println(err.Error())
 	} else {

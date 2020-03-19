@@ -5,7 +5,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/leopedroso45/gorest-api/db"
+	"github.com/leopedroso45/VideoLocalManager/db"
+	//"github.com/leopedroso45/gorest-api/db"
 )
 
 type Video struct {

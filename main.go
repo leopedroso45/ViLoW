@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 
@@ -11,6 +12,7 @@ import (
 // main function
 func main() {
 
+	fmt.Println("Ornitorrinco")
 	feedDBwVideo()
 	router := mux.NewRouter()
 	router.HandleFunc("/video", GetVideo).Methods("GET")
