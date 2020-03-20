@@ -12,7 +12,7 @@ import (
 // main function
 func main() {
 
-	fmt.Println("Ornitorrinco")
+	fmt.Println("Running...")
 	feedDBwVideo()
 	router := mux.NewRouter()
 	router.HandleFunc("/video", GetVideo).Methods("GET")

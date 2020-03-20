@@ -3,6 +3,7 @@ package db
 import (
 	"database/sql"
 	"fmt"
+	"log"
 
 	//mySQL drive
 	_ "github.com/go-sql-driver/mysql"
@@ -10,11 +11,13 @@ import (
 
 /*Create mysql connection*/
 func CreateCon() *sql.DB {
-	db, err := sql.Open("mysql", "root:password@tcp(localhost:3306)/videos")
-	if err != nil {
-		fmt.Println(err.Error())
-	} else {
+	db, err := sql.Open("mysql", "root:password@tcp(docker.for.mac.localhost:3306)/videos")
+	if err == nil {
 		fmt.Println("database is connected")
+
+	} else {
+		fmt.Println(err.Error())
+		log.Fatal(err)
 	}
 	//defer db.Close()
 	// make sure connection is available
@@ -26,5 +29,6 @@ func CreateCon() *sql.DB {
 		fmt.Println("MySQL db is not connected")
 		fmt.Println(err.Error())
 	}
+	fmt.Println(":)")
 	return db
 }
