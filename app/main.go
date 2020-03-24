@@ -10,7 +10,11 @@ import (
 )
 
 func main() {
-	feedDBwVideo()
+	if feedDBwVideo() {
+		fmt.Printf("Success feeding db...")
+	} else {
+		fmt.Printf("Something went wrong feeding db...")
+	}
 	fmt.Println("Running app...")
 	router := mux.NewRouter()
 	router.HandleFunc("/videos", GetVideo).Methods("GET")
