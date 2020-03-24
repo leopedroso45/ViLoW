@@ -15,7 +15,7 @@ type Video struct {
 func insertVideoIntoDB(videoA Video) (result bool) {
 	fmt.Println("Trying to insert videos...")
 	var con *sql.DB
-	con = db.CreateCon()
+	con = CreateCon()
 
 	nome := videoA.NameVideo
 	path := videoA.PathVideo
@@ -34,7 +34,7 @@ func getVideoFromDB() (videoSlice []Video) {
 
 	fmt.Println("Trying to recover videos ...")
 	var con *sql.DB
-	con = db.CreateCon()
+	con = CreateCon()
 
 	resultado, err := con.Query("select id_video,name_video, path_video, desc_video from video")
 	if err != nil {
