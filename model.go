@@ -17,6 +17,7 @@ func insertVideoIntoDB(videoA Video) (result bool) {
 	fmt.Println("Trying to insert videos...")
 	var con *sql.DB
 	con = db.CreateCon()
+
 	nome := videoA.NameVideo
 	path := videoA.PathVideo
 	desc := videoA.DescVideo
@@ -49,7 +50,6 @@ func getVideoFromDB() (videoSlice []Video) {
 			log.Fatal(err)
 		} else {
 			videoSlice = append(videoSlice, videoA)
-			fmt.Println("Slice:")
 			log.Println(videoSlice)
 		}
 	}

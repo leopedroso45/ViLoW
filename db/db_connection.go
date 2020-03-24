@@ -11,7 +11,7 @@ import (
 
 /*Create mysql connection*/
 func CreateCon() *sql.DB {
-	db, err := sql.Open("mysql", "root:password@tcp(mysql:3306)/video")
+	db, err := sql.Open("mysql", "root:password@tcp(mysql:3306)/videos")
 	if err == nil {
 		fmt.Println("Database is connected")
 	} else {
