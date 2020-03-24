@@ -12,8 +12,8 @@ import (
 // main function
 func main() {
 
-	fmt.Println("Running app...")
 	feedDBwVideo()
+	fmt.Println("Running app...")
 	router := mux.NewRouter()
 	router.HandleFunc("/video", GetVideo).Methods("GET")
 	/**

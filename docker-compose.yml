@@ -21,7 +21,7 @@ services:
   app:
     container_name: app
     volumes:
-      - c:/data:/app/app/data
+      - c:/data:app/VideoLocalManager/app/data
     build:
       context: app
       dockerfile: Dockerfile

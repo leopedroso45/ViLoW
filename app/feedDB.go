@@ -6,7 +6,7 @@ import (
 )
 
 func feedDBwVideo() {
-	matches, _ := filepath.Glob(`/app/VideoLocalManager/data/*.mp4`)
+	matches, _ := filepath.Glob(`/app/data/*.mp4`)
 	for _, match := range matches {
 		var videoA Video
 		videoA.NameVideo = filepath.ToSlash(match)

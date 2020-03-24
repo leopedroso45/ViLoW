@@ -1,10 +1,10 @@
 FROM golang
 
-WORKDIR /app/app
+WORKDIR /app
 
-RUN go get github.com/gorilla/mux
+RUN go get -u github.com/gorilla/mux
 RUN go get -u github.com/go-sql-driver/mysql
 
 COPY . .
 
-ENTRYPOINT go run model.go feedDB.go main.go
+ENTRYPOINT go run db_connection.go video.go feedDB.go main.go
