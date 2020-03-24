@@ -9,7 +9,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-/*Create mysql connection*/
+/*CreateCon mysql connection*/
 func CreateCon() *sql.DB {
 	db, err := sql.Open("mysql", "root:password@tcp(mysql:3306)/videos")
 	if err == nil {

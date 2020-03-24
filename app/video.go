@@ -6,6 +6,7 @@ import (
 	"log"
 )
 
+/*Video object */
 type Video struct {
 	IDVideo                         int
 	NameVideo, PathVideo, DescVideo string
@@ -24,10 +25,9 @@ func insertVideoIntoDB(videoA Video) (result bool) {
 	if err != nil {
 		log.Fatal(err)
 		return false
-	} else {
-		defer resultado.Close()
-		return true
 	}
+	defer resultado.Close()
+	return true
 }
 
 func getVideoFromDB() (videoSlice []Video) {

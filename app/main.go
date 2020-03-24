@@ -25,7 +25,7 @@ func main() {
 
 }
 
-// "GetVideo to get all videos from DB"
+/*GetVideo to get all videos from DB*/
 func GetVideo(w http.ResponseWriter, r *http.Request) {
 	//Allow CORS here By * or specific origin
 	w.Header().Set("Access-Control-Allow-Origin", "*")
