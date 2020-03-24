@@ -9,20 +9,17 @@ import (
 	"github.com/gorilla/mux"
 )
 
-// main function
 func main() {
-
 	feedDBwVideo()
 	fmt.Println("Running app...")
 	router := mux.NewRouter()
-	router.HandleFunc("/video", GetVideo).Methods("GET")
+	router.HandleFunc("/videos", GetVideo).Methods("GET")
 	/**
 	router.HandleFunc("/contato/{id}", GetPerson).Methods("GET")
 	router.HandleFunc("/contato/{id}", CreatePerson).Methods("POST")
 	router.HandleFunc("/contato/{id}", DeletePerson).Methods("DELETE")
 	*/
 	log.Fatal(http.ListenAndServe(":8000", router))
-
 }
 
 /*GetVideo to get all videos from DB*/

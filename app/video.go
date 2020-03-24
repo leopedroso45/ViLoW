@@ -45,8 +45,10 @@ func getVideoFromDB() (videoSlice []Video) {
 		var videoA Video
 		err := resultado.Scan(&videoA.IDVideo, &videoA.NameVideo, &videoA.PathVideo, &videoA.DescVideo)
 		if err != nil {
+			fmt.Println("Recover fail!")
 			log.Fatal(err)
 		} else {
+			fmt.Println("Recover done!")
 			videoSlice = append(videoSlice, videoA)
 			log.Println(videoSlice)
 		}
