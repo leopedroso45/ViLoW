@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/leopedroso45/VideoLocalManager/db"
+	"app/db"
 )
 
 type Video struct {
@@ -14,7 +14,7 @@ type Video struct {
 }
 
 func insertVideoIntoDB(videoA Video) (result bool) {
-	fmt.Println("Iniciando aplicação...")
+	fmt.Println("Trying to insert videos...")
 	var con *sql.DB
 	con = db.CreateCon()
 	nome := videoA.NameVideo
@@ -33,7 +33,7 @@ func insertVideoIntoDB(videoA Video) (result bool) {
 
 func getVideoFromDB() (videoSlice []Video) {
 
-	fmt.Println("Iniciando aplicação...")
+	fmt.Println("Trying to recover videos ...")
 	var con *sql.DB
 	con = db.CreateCon()
 
