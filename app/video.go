@@ -16,12 +16,14 @@ func insertVideoIntoDB(videoA Video) (result bool) {
 	fmt.Println("Trying to insert videos...")
 	var con *sql.DB
 	con = CreateCon()
+	fmt.Println("Passo 1...")
+	//nome := videoA.NameVideo
+	//path := videoA.PathVideo
+	//desc := videoA.DescVideo
 
-	nome := videoA.NameVideo
-	path := videoA.PathVideo
-	desc := videoA.DescVideo
-
-	resultado, err := con.Query(`INSERT INTO video (name_video, path_video, desc_video) VALUES ('` + nome + `', '` + path + `', '` + desc + `');`)
+	resultado, err := con.Query(`INSERT INTO video (name_video, path_video, desc_video) VALUES ('` + videoA.NameVideo + `', '` + videoA.PathVideo + `', '` + videoA.DescVideo + `');`)
+	//resultado, err := con.Query("INSERT INTO video (name_video, path_video, desc_video) VALUES ('" + nome + "', '" + path + "', '" + desc + "');")
+	//INSERT INTO video (name_video, path_video, desc_video) VALUES ("nome", "path", "desc");
 	if err != nil {
 		log.Fatal(err)
 		return false

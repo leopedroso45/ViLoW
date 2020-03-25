@@ -5,17 +5,22 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"time"
 
 	"github.com/gorilla/mux"
 )
 
 func main() {
+
+	fmt.Println("Running app...")
+
+	time.Sleep(10 * time.Second)
+
 	if feedDBwVideo() {
-		fmt.Printf("Success feeding db...")
 	} else {
 		fmt.Printf("Something went wrong feeding db...")
 	}
-	fmt.Println("Running app...")
+
 	router := mux.NewRouter()
 	router.HandleFunc("/videos", GetVideo).Methods("GET")
 	/**
@@ -31,6 +36,7 @@ func GetVideo(w http.ResponseWriter, r *http.Request) {
 	//Allow CORS here By * or specific origin
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+
 	v := getVideoFromDB()
 	json.NewEncoder(w).Encode(v)
 
