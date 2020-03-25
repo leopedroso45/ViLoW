@@ -7,4 +7,6 @@ RUN go get -u github.com/go-sql-driver/mysql
 
 COPY . .
 
+RUN chmod +x wait-for-it.sh
+
 ENTRYPOINT go run db_connection.go video.go feedDB.go main.go

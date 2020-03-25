@@ -2,10 +2,10 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"log"
 	"net/http"
-	"time"
 
 	"github.com/gorilla/mux"
 )
@@ -14,14 +14,21 @@ func main() {
 
 	fmt.Println("Running app...")
 
-	time.Sleep(10 * time.Second)
+	//time.Sleep(10 * time.Second)
 
 	if feedDBwVideo() {
 	} else {
 		fmt.Printf("Something went wrong feeding db...")
 	}
 
+	var dir string
+
+	flag.StringVar(&dir, "dir", ".", "/web")
+	flag.Parse()
+
 	router := mux.NewRouter()
+	// This will serve files under http://localhost:8000/static/<filename>
+	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(dir))))
 	router.HandleFunc("/videos", GetVideo).Methods("GET")
 	/**
 	router.HandleFunc("/contato/{id}", GetPerson).Methods("GET")

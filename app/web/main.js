@@ -2,7 +2,7 @@
 var request = new XMLHttpRequest();
 
 // Open a new connection, using the GET request on the URL endpoint
-request.open("GET", "http://localhost:8000/video", true);
+request.open("GET", "http://localhost:8000/videos", true);
 
 request.onload = function() {
   // Begin accessing JSON data here
@@ -60,7 +60,7 @@ function criaComponent(video) {
   att = document.createAttribute("controls");
   videohtml.setAttributeNode(att);
   att = document.createAttribute("src");
-  att.value = video.PathVideo;
+  att.value = "app:8000/" + video.PathVideo;
   sourceVi.setAttributeNode(att);
   var textName = document.createTextNode(video.DescVideo);
   sourceVi.appendChild(textName);
