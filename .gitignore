@@ -5,6 +5,9 @@
 *.so
 *.dylib
 
+# Media Files
+*.mp4
+
 # Test binary, build with `go test -c`
 *.test
 
