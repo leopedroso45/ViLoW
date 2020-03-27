@@ -1,12 +1,12 @@
-# ViLoW
+<p align="center">
+	<a href="https://caddyserver.com"><img src="https://github.com/leopedroso45/ViLoW/blob/master/app/web/ViLoWofc.png" alt="ViLoW"></a>
+</p>
 
-![alt text](https://github.com/leopedroso45/VideoLocalManager/blob/master/web/frontWeb.PNG)
+<!-- ![alt text](https://github.com/leopedroso45/ViLoW/blob/master/app/web/ViLoWofc.png) --> 
 
-## Getting Started
+<h3 align="center">ViLoW is a system that displays videos shared by the user on a platform for access on mobile devices or desktop on home network.</h3>
 
-ViLoW is a system that displays videos shared by the user on a platform for access on mobile devices or desktop on home network.
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+<p align="center">These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.</p>
 
 ### Prerequisites
 
