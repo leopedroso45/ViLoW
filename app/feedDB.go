@@ -14,7 +14,7 @@ func feedDBwVideo() (result bool) {
 			videoA.PathVideo = filepath.ToSlash(match)
 			videoA.DescVideo = filepath.ToSlash(match)
 			if insertVideoIntoDB(videoA) {
-				fmt.Println("Success adding a new video...")
+				fmt.Println("Success adding a new video...!")
 			} else {
 				fmt.Println("Something went wrong adding a new video...")
 			}
