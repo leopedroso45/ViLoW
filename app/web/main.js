@@ -60,7 +60,7 @@ function criaComponent(video) {
   att = document.createAttribute("controls");
   videohtml.setAttributeNode(att);
   att = document.createAttribute("src");
-  att.value = "app:8000/" + video.PathVideo;
+  att.value = video.PathVideo; // Video Path
   sourceVi.setAttributeNode(att);
   var textName = document.createTextNode(video.DescVideo);
   sourceVi.appendChild(textName);

@@ -5,6 +5,12 @@
 *.so
 *.dylib
 
+#data folder
+data/*
+
+# exception to the rule
+!data/.txt
+
 # Media Files
 *.mp4
 

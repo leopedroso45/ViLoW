@@ -14,20 +14,20 @@ func main() {
 
 	fmt.Println("Running app...")
 
-	//time.Sleep(10 * time.Second)
+	if !clearDB() {
+		fmt.Printf("Something went wrong cleaning db...")
+	}
 
-	if feedDBwVideo() {
-	} else {
+	if !feedDBwVideo() {
 		fmt.Printf("Something went wrong feeding db...")
 	}
 
 	var dir string
-
-	flag.StringVar(&dir, "dir", ".", "/web")
+	flag.StringVar(&dir, "dir", ".", "./web")
 	flag.Parse()
 
 	router := mux.NewRouter()
-	// This will serve files under http://localhost:8000/static/<filename>
+
 	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(dir))))
 	router.HandleFunc("/videos", GetVideo).Methods("GET")
 	/**
@@ -46,5 +46,4 @@ func GetVideo(w http.ResponseWriter, r *http.Request) {
 
 	v := getVideoFromDB()
 	json.NewEncoder(w).Encode(v)
-
 }
