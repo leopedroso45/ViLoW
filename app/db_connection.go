@@ -12,8 +12,7 @@ import (
 /*CreateCon mysql connection*/
 func CreateCon() *sql.DB {
 	db, err := sql.Open("mysql", "root:password@tcp(mysql:3306)/videos")
-	if err == nil {
-	} else {
+	if err != nil {
 		fmt.Println("MySQL db is not connected")
 		fmt.Println(err.Error())
 		log.Fatal(err)

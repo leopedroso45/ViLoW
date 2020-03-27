@@ -31,9 +31,9 @@ func main() {
 	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(dir))))
 	router.HandleFunc("/videos", GetVideo).Methods("GET")
 	/**
-	router.HandleFunc("/contato/{id}", GetPerson).Methods("GET")
-	router.HandleFunc("/contato/{id}", CreatePerson).Methods("POST")
-	router.HandleFunc("/contato/{id}", DeletePerson).Methods("DELETE")
+	router.HandleFunc("/contato/{id}", GetVideo).Methods("GET")
+	router.HandleFunc("/contato/{id}", CreateVideo).Methods("POST")
+	router.HandleFunc("/contato/{id}", DeleteVideo).Methods("DELETE")
 	*/
 	log.Fatal(http.ListenAndServe(":8000", router))
 }

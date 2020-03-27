@@ -7,7 +7,6 @@ import (
 )
 
 func feedDBwVideo() (result bool) {
-	//`C:\data\*.mp4`
 	matches, err := filepath.Glob(`/app/data/*.mp4`)
 	if err == nil {
 		for _, match := range matches {
