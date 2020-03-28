@@ -1,5 +1,6 @@
 <p align="center">
-	<a href="https://caddyserver.com"><img src="https://github.com/leopedroso45/ViLoW/blob/master/app/web/ViLoWofc.png" alt="ViLoW">
+	<!-- ![alt text](https://github.com/leopedroso45/ViLoW/blob/master/app/web/ViLoWofc.png) --> 
+	<a href="#"><img src="https://github.com/leopedroso45/ViLoW/blob/master/app/web/ViLoWofc.png" alt="ViLoW">	
 	</a>
 </p>
 
@@ -9,9 +10,9 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c402f859fde040c9af9f5b9e2e272d31)](https://app.codacy.com/manual/leopedroso45/ViLoW?utm_source=github.com&utm_medium=referral&utm_content=leopedroso45/ViLoW&utm_campaign=Badge_Grade_Dashboard)
 [![Maintainability](https://api.codeclimate.com/v1/badges/974ea2165b7a5ac93d63/maintainability)](https://codeclimate.com/github/leopedroso45/ViLoW/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/974ea2165b7a5ac93d63/test_coverage)](https://codeclimate.com/github/leopedroso45/ViLoW/test_coverage)
+[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white&style=flat)](https://pkg.go.dev/github.com/leopedroso45/vilow)
 
 </div>
-<!-- ![alt text](https://github.com/leopedroso45/ViLoW/blob/master/app/web/ViLoWofc.png) --> 
 
 <h3 align="center">ViLoW is a system that displays videos shared by the user on a platform for access on mobile devices or desktop on home network.</h3>
 
