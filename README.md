@@ -2,6 +2,8 @@
 	<a href="https://caddyserver.com"><img src="https://github.com/leopedroso45/ViLoW/blob/master/app/web/ViLoWofc.png" alt="ViLoW"></a>
 </p>
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/leopedroso45/vilow)](https://goreportcard.com/report/github.com/leopedroso45/ViLoW)
+
 <!-- ![alt text](https://github.com/leopedroso45/ViLoW/blob/master/app/web/ViLoWofc.png) --> 
 
 <h3 align="center">ViLoW is a system that displays videos shared by the user on a platform for access on mobile devices or desktop on home network.</h3>
@@ -9,6 +11,8 @@
 <p align="center">These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.</p>
 
 ### Prerequisites
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c402f859fde040c9af9f5b9e2e272d31)](https://app.codacy.com/manual/leopedroso45/ViLoW?utm_source=github.com&utm_medium=referral&utm_content=leopedroso45/ViLoW&utm_campaign=Badge_Grade_Dashboard)
 
 - [Docker](https://docs.docker.com/)
 - [Docker-compose](https://docs.docker.com/compose/install/)
@@ -24,16 +28,14 @@ or
 
 - Now you can clone this [repository](https://github.com/leopedroso45/ViLoW) and open it in your favorite editor, I recommend [VSCode](https://code.visualstudio.com/)!  :)
 
-### You need to modify some paths for everything to work properly!
+### You need to modify some paths for everything to work properly
 
 - By default, the volume folder where videos should be stored is **C:\data**, but you can easily modify this in the Docker-compose file.
 
-- In the db_connection file you can edit the database settings, such as the database name, root name and password that are standard. (If you're running on docker, you don't have to worry about)
+-  In the db_connection file you can edit the database settings, such as the database name, root name and password that are standard. (If you're running on docker, you don't have to worry about)
 
 - Now you can run: 
-```
-docker-compose run --build
-```
+```docker-compose run --build```
 
 ## Built With
 
