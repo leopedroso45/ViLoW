@@ -12,6 +12,8 @@
 
 ### Prerequisites
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c402f859fde040c9af9f5b9e2e272d31)](https://app.codacy.com/manual/leopedroso45/ViLoW?utm_source=github.com&utm_medium=referral&utm_content=leopedroso45/ViLoW&utm_campaign=Badge_Grade_Dashboard)
+
 - [Docker](https://docs.docker.com/)
 - [Docker-compose](https://docs.docker.com/compose/install/)
 
