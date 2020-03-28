@@ -1,18 +1,24 @@
 <p align="center">
-	<a href="https://caddyserver.com"><img src="https://github.com/leopedroso45/ViLoW/blob/master/app/web/ViLoWofc.png" alt="ViLoW"></a>
+	<a href="https://caddyserver.com"><img src="https://github.com/leopedroso45/ViLoW/blob/master/app/web/ViLoWofc.png" alt="ViLoW">
+	</a>
 </p>
 
+<div align="center">
+	
 [![Go Report Card](https://goreportcard.com/badge/github.com/leopedroso45/vilow)](https://goreportcard.com/report/github.com/leopedroso45/ViLoW)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c402f859fde040c9af9f5b9e2e272d31)](https://app.codacy.com/manual/leopedroso45/ViLoW?utm_source=github.com&utm_medium=referral&utm_content=leopedroso45/ViLoW&utm_campaign=Badge_Grade_Dashboard)
+[![Maintainability](https://api.codeclimate.com/v1/badges/974ea2165b7a5ac93d63/maintainability)](https://codeclimate.com/github/leopedroso45/ViLoW/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/974ea2165b7a5ac93d63/test_coverage)](https://codeclimate.com/github/leopedroso45/ViLoW/test_coverage)
 
+</div>
 <!-- ![alt text](https://github.com/leopedroso45/ViLoW/blob/master/app/web/ViLoWofc.png) --> 
 
 <h3 align="center">ViLoW is a system that displays videos shared by the user on a platform for access on mobile devices or desktop on home network.</h3>
 
 <p align="center">These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.</p>
+ 
 
 ### Prerequisites
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c402f859fde040c9af9f5b9e2e272d31)](https://app.codacy.com/manual/leopedroso45/ViLoW?utm_source=github.com&utm_medium=referral&utm_content=leopedroso45/ViLoW&utm_campaign=Badge_Grade_Dashboard)
 
 - [Docker](https://docs.docker.com/)
 - [Docker-compose](https://docs.docker.com/compose/install/)
