@@ -20,9 +20,6 @@ services:
       - PMA_ARBITRARY=1
   app:
     container_name: app
-    networks:
-      app_net:
-        ipv4_address: 192.168.1.57
     volumes:
       - c:/data:/app/data/
     ports:
@@ -32,14 +29,4 @@ services:
     entrypoint: ./wait-for-it.sh mysql:3306 -t 0 -- go run db_connection.go video.go feedDB.go main.go
     build:
       context: app
-      dockerfile: Dockerfile 
-networks:
-  app_net:
-    driver: bridge
-    driver_opts:
-      com.docker.network.enable_ipv6: "false"
-    ipam:
-      driver: default
-      config:
-      - subnet: 192.168.1.0/24
-        #gateway: 192.168.1.254
+      dockerfile: Dockerfile
