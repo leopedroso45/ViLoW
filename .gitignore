@@ -6,10 +6,10 @@
 *.dylib
 
 #data folder
-data/*
+#data/*
 
 # exception to the rule
-!data/.txt
+#!data/.txt
 
 # Media Files
 *.mp4
