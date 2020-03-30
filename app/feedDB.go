@@ -13,7 +13,8 @@ func feedDBwVideo() (result bool) {
 			path := filepath.ToSlash(match)
 			formatedName := strings.Replace(path, "/app/data/", "", -1)
 			// /app /..
-			formatedPath := strings.Replace(path, "/app", "..", -1)
+			//http://localhost:8000/static/data/FINNEAS%20-%20I%20Lost%20A%20Friend%20(Official%20Video).mp4
+			formatedPath := strings.Replace(path, "/app", "http://localhost:8000/static", -1)
 
 			var videoA Video
 			videoA.NameVideo = formatedName
