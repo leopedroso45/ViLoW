@@ -33,7 +33,7 @@ or
 
 - After installing the tools mentioned above you are ready to run the application and / or contribute to the project.
 
-- Now you can clone this [repository](https://github.com/leopedroso45/ViLoW) and open it in your favorite editor, I recommend [VSCode](https://code.visualstudio.com/)!  :)
+- Now you can clone this [ViloW Server](https://github.com/leopedroso45/ViLoW), [ViLoW Client](https://github.com/leopedroso45/ViLoW_Client) and open it in your favorite editor, I recommend [VSCode](https://code.visualstudio.com/)!  :)
 
 ### You need to modify some paths for everything to work properly
 
@@ -51,7 +51,9 @@ or
 * [MySQL](https://www.mysql.com/) - is a relational database management system based on SQL – Structured Query Language.
 * [Docker](https://docs.docker.com/) - Docker provides a way to run applications securely isolated in a container, packaged with all its dependencies and libraries.
 
-The client has not yet been developed, some technologies are still being studied. Like: web flutter, ReactJs, VueJs
+The client was built using Reactjs, check it out:
+
+- [ViLoW](https://github.com/leopedroso45/ViLoW_Client)
 
 ## Contributing
 
