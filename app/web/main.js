@@ -2,7 +2,7 @@
 var request = new XMLHttpRequest();
 
 // Open a new connection, using the GET request on the URL endpoint
-request.open("GET", "http://localhost:8000/videos", true);
+request.open("GET", "http://http://192.168.43.216:8000/videos", true);
 
 request.onload = function() {
   // Begin accessing JSON data here

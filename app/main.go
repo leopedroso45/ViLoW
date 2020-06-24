@@ -27,10 +27,10 @@ func main() {
 	flag.Parse()
 
 	router := mux.NewRouter()
-
-	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(dir))))
+	router.PathPrefix("/data/").Handler(http.StripPrefix("/data", http.FileServer(http.Dir("./data"))))
 	router.HandleFunc("/videos", GetVideo).Methods("GET")
 	/**
+	//router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(dir))))
 	router.HandleFunc("/contato/{id}", GetVideo).Methods("GET")
 	router.HandleFunc("/contato/{id}", CreateVideo).Methods("POST")
 	router.HandleFunc("/contato/{id}", DeleteVideo).Methods("DELETE")
