@@ -12,6 +12,9 @@ type Video struct {
 	NameVideo, PathVideo, DescVideo string
 }
 
+/*insertVideoIntoDB Receives an object of type Video,
+opens a connection to database and returns true
+if no errors occur.*/
 func insertVideoIntoDB(videoA Video) (result bool) {
 	var con *sql.DB
 	con = CreateCon()
@@ -25,6 +28,9 @@ func insertVideoIntoDB(videoA Video) (result bool) {
 	return true
 }
 
+/*getVideoFromDB Open a connection
+to database and returns a slice
+ of Video if no errors occur.*/
 func getVideoFromDB() (videoSlice []Video) {
 
 	fmt.Println("Trying to recover videos ...")
@@ -48,6 +54,9 @@ func getVideoFromDB() (videoSlice []Video) {
 	return
 }
 
+/*clearDB Open a connection
+to database and clears all
+videos already inserted.*/
 func clearDB() (result bool) {
 	var con *sql.DB
 	con = CreateCon()
