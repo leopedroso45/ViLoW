@@ -12,6 +12,14 @@ type Video struct {
 	NameVideo, PathVideo, DescVideo string
 }
 
+/*VideoConstructor build a video type */
+func VideoConstructor(name, desc, path string) (video Video) {
+	video.NameVideo = name
+	video.PathVideo = path
+	video.DescVideo = desc
+	return video
+}
+
 /*insertVideoIntoDB Receives an object of type Video,
 opens a connection to database and returns true
 if no errors occur.*/
