@@ -87,6 +87,7 @@ func PostVideo(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Fprintf(w, "Successfully Uploaded File\n")
+	//fmt.Fprintf(w, "Successfully Uploaded File\n")
+	w.WriteHeader(204)
 
 }

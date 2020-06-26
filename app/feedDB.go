@@ -19,6 +19,10 @@ func feedDBwVideo() (result bool) {
 			formatedName := strings.Replace(path, "/app/data/", "", -1)
 			formatedPath := strings.Replace(path, "/app", staticPath, -1)
 
+			//
+			formatedName = strings.Replace(formatedName, "'", "", -1)
+			formatedPath = strings.Replace(formatedPath, "'", "", -1)
+
 			videoA := VideoConstructor(formatedName, formatedName, formatedPath)
 
 			if !insertVideoIntoDB(videoA) {
