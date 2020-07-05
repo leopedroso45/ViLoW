@@ -3,10 +3,11 @@ FROM golang:latest
 WORKDIR /app
 
 RUN go get -u github.com/gorilla/mux
+RUN go get -u github.com/gorilla/securecookie
 RUN go get -u github.com/go-sql-driver/mysql
 
 COPY . .
 
 RUN chmod +x wait-for-it.sh
 
-ENTRYPOINT go run db_connection.go video.go feedDB.go main.go
+ENTRYPOINT go run db_connection.go video.go user.go handler.go session.go feedDB.go main.go

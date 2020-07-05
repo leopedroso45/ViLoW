@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio</title>
+  </head>
+  <body>
+    <h1>Sign Up - It's FREE!</h1>
+    <form method="post" action="/sign">
+      <label for="name">Your name: </label>  
+      <input type="text" id="name" name="name" />
+      <label for="password">Password: </label>
+      <input type="password" id="password" name="password" />
+      <label for="age">Age: </label>
+      <input type="number" id="age" name="age" />
+      <button type="submit">Register</button>
+    </form>
+    <h1>Login</h1>
+    <form method="post" action="/login">
+      <label for="user">User name</label>
+      <input type="text" id="user" name="user" />
+      <label for="pass">Password</label>
+      <input type="password" id="pass" name="pass" />
+      <button type="submit">Login</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Internal</h1>
+    <hr />
+    <small>User:{{.}}</small>
+    <form method="post" action="/videos" enctype="multipart/form-data">
+      <input type="file" name="myFile" />
+      <input type="submit" value="Upload File.." />
+    </form>
+    <form method="post" action="/logout">
+      <button type="submit">Logout</button>
+    </form>
+  </body>
+</html>
