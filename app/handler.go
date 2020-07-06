@@ -16,6 +16,17 @@ func LoginPageHandler(w http.ResponseWriter, r *http.Request) {
 	templates.ExecuteTemplate(w, "login.html", nil)
 }
 
+/*UploadPageHandler as */
+func UploadPageHandler(w http.ResponseWriter, r *http.Request) {
+	userName, _ := GetUserName(r)
+	if userName != "" {
+		templates.ExecuteTemplate(w, "upload.html", nil)
+	} else {
+		http.Redirect(w, r, "/", 302)
+	}
+
+}
+
 /*SignHandler as */
 func SignHandler(w http.ResponseWriter, r *http.Request) {
 	name := r.FormValue("name")

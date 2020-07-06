@@ -26,6 +26,7 @@ func main() {
 	router.HandleFunc("/sign", SignHandler).Methods("POST")
 	router.HandleFunc("/login", LoginHandler).Methods("POST")
 	router.HandleFunc("/login", LoginPageHandler).Methods("GET")
+	router.HandleFunc("/upload", UploadPageHandler).Methods("GET")
 	router.HandleFunc("/logout", LogoutHandler).Methods("POST")
 	router.HandleFunc("/internal", InternalPageHandler)
 
