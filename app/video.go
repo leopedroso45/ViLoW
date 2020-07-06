@@ -149,6 +149,6 @@ func PostVideo(w http.ResponseWriter, r *http.Request) {
 
 	//fmt.Fprintf(w, "Successfully Uploaded File\n")
 	//templates.ExecuteTemplate(w, "home.html", userName)
-	http.Redirect(w, r, "/", 302)
+	http.Redirect(w, r, "/internal", 302)
 
 }
