@@ -7,7 +7,13 @@ import (
 
 /*IndexPageHandler as */
 func IndexPageHandler(w http.ResponseWriter, r *http.Request) {
-	templates.ExecuteTemplate(w, "index.html", nil)
+	videos := getVideo6FromDB()
+	templates.ExecuteTemplate(w, "index.html", videos)
+}
+
+/*LoginPageHandler as */
+func LoginPageHandler(w http.ResponseWriter, r *http.Request) {
+	templates.ExecuteTemplate(w, "login.html", nil)
 }
 
 /*SignHandler as */

@@ -56,6 +56,32 @@ func insertVideoIntoDBWID(videoA Video, id string) (result bool) {
 	return true
 }
 
+/*getVideo6FromDB Open a connection
+to database and returns a slice
+ of Video if no errors occur.*/
+func getVideo6FromDB() (videoSlice []Video) {
+
+	fmt.Println("Trying to recover videos ...")
+	var con *sql.DB
+	con = CreateCon()
+
+	resultado, err := con.Query("SELECT id_video,name_video, path_video, desc_video from video ORDER BY RAND() LIMIT 6")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resultado.Close()
+	for resultado.Next() {
+		var videoA Video
+		err := resultado.Scan(&videoA.IDVideo, &videoA.NameVideo, &videoA.PathVideo, &videoA.DescVideo)
+		if err != nil {
+			log.Fatal(err)
+		} else {
+			videoSlice = append(videoSlice, videoA)
+		}
+	}
+	return
+}
+
 /*getVideoFromDB Open a connection
 to database and returns a slice
  of Video if no errors occur.*/
