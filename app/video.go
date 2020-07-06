@@ -136,7 +136,7 @@ func PostVideo(w http.ResponseWriter, r *http.Request) {
 	}
 	tempFile.Write(fileBytes)
 
-	staticPath := "http://192.168.43.216:8000"
+	staticPath := "http://192.168.1.104:8000"
 	currentPath := strings.Replace(tempFile.Name(), "data/", staticPath+"/data/", -1)
 
 	videoA := VideoConstructor(handler.Filename, handler.Filename, currentPath)
