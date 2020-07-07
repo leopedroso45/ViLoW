@@ -31,12 +31,13 @@ func UploadPageHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
-/*WatchPageHandler as */
+/*WatchPageHandler as*/
 func WatchPageHandler(w http.ResponseWriter, r *http.Request) {
 
 	vars := mux.Vars(r)
 	video := getAVideoFromDB(vars["id"])
-	user, err := GetUserFromID(string(video.IDUser))
+	log.Println(video)
+	user, err := GetUserFromID(video.IDUser)
 	if err == nil {
 		page := VideoPageConstructor(video, user)
 		templates.ExecuteTemplate(w, "watch.html", page)

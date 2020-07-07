@@ -14,23 +14,30 @@ type User struct {
 }
 
 /*GetUserFromID receive the userID from the video */
-func GetUserFromID(id string) (User, error) {
+func GetUserFromID(id int) (User, error) {
 	fmt.Printf("AQUI 8")
 	var con *sql.DB
 	con = CreateCon()
 	var user User
-	sqlst := `SELECT user.id_user, user.name_user FROM user WHERE user.id_user = '` + id + `'`
-	row := con.QueryRow(sqlst)
-	err := row.Scan(&user.IDUser, &user.NameUser)
-	switch err {
-	case sql.ErrNoRows:
-		log.Println("No rows were returned")
-		return user, err
-	case nil:
-		return user, nil
-	default:
-		panic(err)
+	userid := string(id)
+	sqlst := `SELECT user.id_user, user.name_user FROM user WHERE user.id_user = ` + userid
+	row, err := con.Query(sqlst)
+	if err != nil {
+		log.Fatal(err)
 	}
+	defer row.Close()
+	for row.Next() {
+		err := row.Scan(&user.IDUser, &user.NameUser)
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
+	err = row.Err()
+	if err != nil {
+		log.Fatal(err)
+
+	}
+	return user, err
 }
 
 /*GetUser User object */
