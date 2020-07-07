@@ -171,9 +171,12 @@
 							</center>
 						</figure>
 						<div class="fh5co-text">
-							<h2>{{$element.DescVideo}}</h2>
+							<h2>{{$element.NameVideo}}</h2>
 							<p>{{$element.DescVideo}}</p>
-							<p><span class="btn btn-primary">Watch</span></p>
+							<form method="post" action='/{{$element.IDVideo}}'>
+								<p><span class="btn btn-primary">Watch</span></p>
+								<input type="submit" />
+							</form>
 						</div>
 					</a>
 				</div>

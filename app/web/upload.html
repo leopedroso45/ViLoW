@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 
 <html>
-	<head>
+
+<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Login &mdash; Video Website Template by leopedroso45</title>
@@ -11,7 +12,7 @@
 	<meta name="author" content="leopedroso45" />
 
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-	
+
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="./assets/css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -41,123 +42,153 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
-	</head>
-	<body>
-		
+</head>
+
+<body>
+
 	<div class="gtco-loader"></div>
-	
+
 	<div id="page">
 
-	
-	<!-- <div class="page-inner"> -->
-	<nav class="gtco-nav" role="navigation">
-		<div class="gtco-container">
-			
-			<div class="row">
-				<div class="col-sm-4 col-xs-12">
-					<div id="gtco-logo"><a href="/">ViloW <em>.</em></a></div>
-				</div>
-				<div class="col-xs-8 text-right menu-1">
-					<form method="POST" action="/logout">
-					<ul>
-						<li><a href="destination.html">Get VIP</a></li>
-						<li><a href="pricing.html">Donate</a></li>
-						<li class="has-dropdown">
-							<a href="/">Photos</a>
-							<ul class="dropdown">
-								<li><a href="#">Europe</a></li>
-								<li><a href="#">Asia</a></li>
-								<li><a href="#">America</a></li>
-								<li><a href="#">Canada</a></li>
-							</ul>
-						</li>
-						<li>
-						<input type="submit" class="btn btn-primary" value="Logout" />
-						</li>
-					</ul>
-					</form>
-				</div>
-			</div>
-			
-		</div>
-	</nav>
-	
-	<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(/assets/images/img_bg_2.jpg)">
-		<div class="overlay"></div>
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-md-12 col-md-offset-0 text-left">
-					
 
-					<div class="row row-mt-15em">
-						<div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
-							<h1>Hello {{.}}, we're happy to have you here!</h1>	
-						</div>
-						<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
-							<div class="form-wrap">
-								<div class="tab">
-									
-									<div class="tab-content">
-										<div class="tab-content-inner active" data-content="act-menu">
-											<h3>My menu</h3>
-											<form method="GET" action="/upload">
-												<div class="row form-group">
-													<div class="col-md-12">
-														<input type="submit" class="btn btn-primary btn-block" value="Upload videos"/>
+		<!-- <div class="page-inner"> -->
+		<nav class="gtco-nav" role="navigation">
+			<div class="gtco-container">
+
+				<div class="row">
+					<div class="col-sm-4 col-xs-12">
+						<div id="gtco-logo"><a href="/">ViloW <em>.</em></a></div>
+					</div>
+					<div class="col-xs-8 text-right menu-1">
+						<form method="POST" action="/logout">
+							<ul>
+								<li><a href="destination.html">Get VIP</a></li>
+								<li><a href="pricing.html">Donate</a></li>
+								<li class="has-dropdown">
+									<a href="/">Photos</a>
+									<ul class="dropdown">
+										<li><a href="#">Europe</a></li>
+										<li><a href="#">Asia</a></li>
+										<li><a href="#">America</a></li>
+										<li><a href="#">Canada</a></li>
+									</ul>
+								</li>
+								<li>
+									<input type="submit" class="btn btn-primary" value="Logout" />
+								</li>
+							</ul>
+						</form>
+					</div>
+				</div>
+
+			</div>
+		</nav>
+
+		<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner"
+			style="background-image: url(/assets/images/img_bg_2.jpg)">
+			<div class="overlay"></div>
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-left">
+						<div class="row row-mt-15em">
+							<form method="post" action="/videos" enctype="multipart/form-data">
+								<div class="col-md-7 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
+									<div class="form-wrap">
+										<div class="tab">
+
+											<div class="tab-content">
+												<div class="tab-content-inner active" data-content="act-menu">
+													<h4>Fill in the video information:</h4>
+													<div class="row form-group">
+														<div class="col-md-12">
+															<label for="pass">Choose a title for your video:</label>
+															<input type="text" id="name" name="name"
+																class="form-control" required />
+														</div>
+													</div>
+													<div class="row form-group">
+														<div class="col-md-12">
+															<label for="pass">Write a description for your
+																video:</label>
+															<input type="text" id="desc" name="desc"
+																class="form-control" required />
+														</div>
+													</div>
+													<div class="row form-group">
+														<div class="col-md-12">
+															<input type="file" name="myFile" required />
+														</div>
+													</div>
+													<div class="row form-group">
+														<div class="col-md-12">
+															<input type="submit" class="btn btn-primary btn-block"
+																value="Upload File." />
+														</div>
 													</div>
 												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+
+
+							<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInLeft">
+								<div class="form-wrap">
+									<div class="tab">
+
+										<div class="tab-content">
+											<div class="tab-content-inner active" data-content="act-menu">
+												<h3>My menu</h3>
+												<form method="GET" action="/internal">
+													<div class="row form-group">
+														<div class="col-md-12">
+															<input type="submit" class="btn btn-primary btn-block"
+																value="Voltar" />
+														</div>
+													</div>
 												</form>
-												<div class="row form-group">
-													<div class="col-md-12">
-														<label for="pass">Password</label>
-														<input type="password" id="pass" name="pass" class="form-control">
-													</div>
-												</div>
-												<div class="row form-group">
-													<div class="col-md-12">
-														<input type="submit" class="btn btn-primary btn-block" value="Log In"/>
-													</div>
-												</div>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 
-						</div>	
-					</div>								
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</header>
+		</header>
 
-	<footer id="gtco-footer" role="contentinfo">
-		<div class="gtco-container">	
-			<div class="row copyright">
-				<div class="col-md-12">
-					<p class="pull-left">
-						<small class="block">&copy; 2020 leopedroso45. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://github.com/leopedroso45" target="_blank">leopedroso45</a></small>
-					</p>
-					<p class="pull-right">
+		<footer id="gtco-footer" role="contentinfo">
+			<div class="gtco-container">
+				<div class="row copyright">
+					<div class="col-md-12">
+						<p class="pull-left">
+							<small class="block">&copy; 2020 leopedroso45. All Rights Reserved.</small>
+							<small class="block">Designed by <a href="http://github.com/leopedroso45"
+									target="_blank">leopedroso45</a></small>
+						</p>
+						<p class="pull-right">
 						<ul class="gtco-social-icons pull-right">
 							<li><a href="/"><i class="icon-twitter"></i></a></li>
 							<li><a href="/"><i class="icon-facebook"></i></a></li>
 							<li><a href="/"><i class="icon-instagram"></i></a></li>
 						</ul>
-					</p>
+						</p>
+					</div>
 				</div>
-			</div>
 
-		</div>
-	</footer>
-	<!-- </div> -->
+			</div>
+		</footer>
+		<!-- </div> -->
 
 	</div>
 
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-	
+
 	<!-- jQuery -->
 	<script src="/assets/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -177,14 +208,14 @@
 	<!-- Magnific Popup -->
 	<script src="/assets/js/jquery.magnific-popup.min.js"></script>
 	<script src="/assets/js/magnific-popup-options.js"></script>
-	
+
 	<!-- Datepicker -->
 	<script src="/assets/js/bootstrap-datepicker.min.js"></script>
-	
+
 
 	<!-- Main -->
 	<script src="/assets/js/main.js"></script>
 
-	</body>
-</html>
+</body>
 
+</html>

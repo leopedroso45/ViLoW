@@ -12,7 +12,7 @@ import (
 
 /*Video object */
 type Video struct {
-	IDVideo                         int
+	IDVideo, IDUser                 int
 	NameVideo, PathVideo, DescVideo string
 }
 
@@ -56,6 +56,27 @@ func insertVideoIntoDBWID(videoA Video, id string) (result bool) {
 	return true
 }
 
+func getAVideoFromDB(id string) (video Video) {
+	var con *sql.DB
+	con = CreateCon()
+
+	resultado, err := con.Query(`SELECT id_video, usuario_video, name_video, path_video, desc_video from video where id_video = '` + id + `'`)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resultado.Close()
+	fmt.Printf("AQUI 1NOPE")
+	for resultado.Next() {
+		err := resultado.Scan(&video.IDVideo, &video.IDUser, &video.NameVideo, &video.PathVideo, &video.DescVideo)
+		if err != nil {
+
+			log.Fatal(err)
+			return
+		}
+	}
+	return
+}
+
 /*getVideo6FromDB Open a connection
 to database and returns a slice
  of Video if no errors occur.*/
@@ -70,9 +91,12 @@ func getVideo6FromDB() (videoSlice []Video) {
 		log.Fatal(err)
 	}
 	defer resultado.Close()
+	fmt.Printf("AQUI 2NOPE")
+
 	for resultado.Next() {
 		var videoA Video
 		err := resultado.Scan(&videoA.IDVideo, &videoA.NameVideo, &videoA.PathVideo, &videoA.DescVideo)
+
 		if err != nil {
 			log.Fatal(err)
 		} else {
@@ -90,16 +114,19 @@ func getVideoFromDB() (videoSlice []Video) {
 	fmt.Println("Trying to recover videos ...")
 	var con *sql.DB
 	con = CreateCon()
-
+	fmt.Printf("AQUI 3")
 	resultado, err := con.Query("select id_video,name_video, path_video, desc_video from video")
 	if err != nil {
+
 		log.Fatal(err)
 	}
 	defer resultado.Close()
+
 	for resultado.Next() {
 		var videoA Video
 		err := resultado.Scan(&videoA.IDVideo, &videoA.NameVideo, &videoA.PathVideo, &videoA.DescVideo)
 		if err != nil {
+
 			log.Fatal(err)
 		} else {
 			videoSlice = append(videoSlice, videoA)
@@ -138,6 +165,9 @@ func PostVideo(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
+	name := r.FormValue("name")
+	desc := r.FormValue("desc")
+
 	r.ParseMultipartForm(1024)
 
 	file, handler, err := r.FormFile("myFile")
@@ -165,7 +195,7 @@ func PostVideo(w http.ResponseWriter, r *http.Request) {
 	staticPath := "http://192.168.1.104:8000"
 	currentPath := strings.Replace(tempFile.Name(), "data/", staticPath+"/data/", -1)
 
-	videoA := VideoConstructor(handler.Filename, handler.Filename, currentPath)
+	videoA := VideoConstructor(name, desc, currentPath)
 
 	_, id := GetUserName(r)
 	if !insertVideoIntoDBWID(videoA, id) {

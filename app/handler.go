@@ -1,8 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 /*IndexPageHandler as */
@@ -23,6 +26,23 @@ func UploadPageHandler(w http.ResponseWriter, r *http.Request) {
 		templates.ExecuteTemplate(w, "upload.html", nil)
 	} else {
 		http.Redirect(w, r, "/", 302)
+
+	}
+
+}
+
+/*WatchPageHandler as */
+func WatchPageHandler(w http.ResponseWriter, r *http.Request) {
+
+	vars := mux.Vars(r)
+	video := getAVideoFromDB(vars["id"])
+	user, err := GetUserFromID(string(video.IDUser))
+	if err == nil {
+		page := VideoPageConstructor(video, user)
+		templates.ExecuteTemplate(w, "watch.html", page)
+	} else {
+		log.Print(err)
+		templates.ExecuteTemplate(w, "index.html", nil)
 	}
 
 }
@@ -71,14 +91,17 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 func LogoutHandler(w http.ResponseWriter, r *http.Request) {
 	ClearSession(w)
 	http.Redirect(w, r, "/", 302)
+	fmt.Printf("DEU MERDA")
 }
 
 /*InternalPageHandler as */
 func InternalPageHandler(w http.ResponseWriter, r *http.Request) {
 	userName, _ := GetUserName(r)
 	if userName != "" {
+		fmt.Printf("DEU MERDA")
 		templates.ExecuteTemplate(w, "home.html", userName)
 	} else {
+		fmt.Printf("DEU MERDA")
 		http.Redirect(w, r, "/", 302)
 	}
 }
