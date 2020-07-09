@@ -14,9 +14,9 @@ func main() {
 
 	templates = template.Must(template.ParseGlob("web/*.html"))
 
-	clearDBVideo()
-	clearDBUser()
-	feedDBwVideo()
+	//clearDBVideo()
+	//clearDBUser()
+	//feedDBwVideo()
 
 	log.Println("Running app...")
 
@@ -30,6 +30,9 @@ func main() {
 	router.HandleFunc("/logout", LogoutHandler).Methods("POST")
 	router.HandleFunc("/videos", PostVideo).Methods("POST")
 	router.HandleFunc("/internal", InternalPageHandler)
+
+	router.HandleFunc("/upvote/{videoID}", UpVoteHandler).Methods("POST")
+	router.HandleFunc("/downvote/{videoID}", DownVoteHandler).Methods("POST")
 
 	router.PathPrefix("/assets/").Handler(http.StripPrefix("/assets", http.FileServer(http.Dir("./web"))))
 	router.PathPrefix("/data/").Handler(http.StripPrefix("/data", http.FileServer(http.Dir("./data"))))

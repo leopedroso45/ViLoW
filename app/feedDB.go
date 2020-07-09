@@ -15,9 +15,10 @@ func feedDBwVideo() (result bool) {
 		for _, match := range matches {
 			path := filepath.ToSlash(match)
 
-			staticPath, _ := getLocalIP()
-			port := ":8000"
-			staticPath = staticPath + port
+			//staticPath, _ := getLocalIP()
+			//port := ":8000"
+			//staticPath = staticPath + port
+			staticPath := "http://192.168.1.102:8000"
 			formatedName := strings.Replace(path, "/app/data/", "", -1)
 			formatedPath := strings.Replace(path, "/app", staticPath, -1)
 

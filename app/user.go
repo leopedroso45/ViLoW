@@ -4,6 +4,7 @@ import (
 	"crypto/sha1"
 	"database/sql"
 	"encoding/hex"
+	"fmt"
 	"log"
 )
 
@@ -13,12 +14,12 @@ type User struct {
 }
 
 /*GetUserFromID receive the userID from the video */
-func GetUserFromID(id int) (User, error) {
+func GetUserFromID(idu int) (User, error) {
 	var con *sql.DB
 	con = CreateCon()
 	var user User
-	userid := string(id)
-	sqlst := `SELECT user.id_user, user.name_user FROM user WHERE user.id_user = ` + userid
+
+	sqlst := fmt.Sprintf("SELECT user.id_user, user.name_user FROM user WHERE user.id_user = %v", idu)
 	row, err := con.Query(sqlst)
 	if err != nil {
 		log.Fatal(err)

@@ -1,8 +1,10 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
+	"strconv"
 
 	"github.com/gorilla/mux"
 )
@@ -30,6 +32,41 @@ func UploadPageHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
+/*UpVoteHandler as*/
+func UpVoteHandler(w http.ResponseWriter, r *http.Request) {
+	userName, id := GetUserName(r)
+	if userName != "" {
+		templates.ExecuteTemplate(w, "home.html", userName)
+	} else {
+		vars := mux.Vars(r)
+		video := getAVideoFromDB(vars["videoID"])
+		idu, _ := strconv.Atoi(id)
+		user, err := GetUserFromID(idu)
+		if err == nil {
+			CreateVote(2, video, user)
+		}
+		http.Redirect(w, r, "/internal", 302)
+	}
+
+}
+
+/*DownVoteHandler as*/
+func DownVoteHandler(w http.ResponseWriter, r *http.Request) {
+	userName, id := GetUserName(r)
+	if userName != "" {
+		templates.ExecuteTemplate(w, "home.html", userName)
+	} else {
+		vars := mux.Vars(r)
+		video := getAVideoFromDB(vars["videoID"])
+		idu, _ := strconv.Atoi(id)
+		user, err := GetUserFromID(idu)
+		if err == nil {
+			CreateVote(1, video, user)
+		}
+		http.Redirect(w, r, "/internal", 302)
+	}
+}
+
 /*WatchPageHandler as*/
 func WatchPageHandler(w http.ResponseWriter, r *http.Request) {
 
@@ -39,6 +76,8 @@ func WatchPageHandler(w http.ResponseWriter, r *http.Request) {
 	user, err := GetUserFromID(video.IDUser)
 	if err == nil {
 		page := VideoPageConstructor(video, user)
+		fmt.Println(page)
+
 		templates.ExecuteTemplate(w, "watch.html", page)
 	} else {
 		log.Print(err)

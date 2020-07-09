@@ -2,14 +2,14 @@ package main
 
 /*VideoPage object */
 type VideoPage struct {
-	video Video
-	user  User
+	Video Video
+	User  User
 }
 
 //VideoPageConstructor asdsa
 func VideoPageConstructor(video Video, user User) (videoPage VideoPage) {
 
-	videoPage.video = video
-	videoPage.user = user
+	videoPage.Video = video
+	videoPage.User = user
 	return
 }
