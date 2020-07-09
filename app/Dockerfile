@@ -10,4 +10,4 @@ COPY . .
 
 RUN chmod +x wait-for-it.sh
 
-ENTRYPOINT go run db_connection.go video.go user.go Comment.go VideoPage.go handler.go session.go feedDB.go main.go
+ENTRYPOINT go run db_connection.go ip.go video.go user.go Comment.go VideoPage.go handler.go session.go feedDB.go main.go

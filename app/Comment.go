@@ -27,7 +27,6 @@ if no errors occur.*/
 func insertCommentIntoDB(comment Comment) (result bool) {
 	var con *sql.DB
 	con = CreateCon()
-	fmt.Printf("AQUI 7")
 	user := string(comment.UserComment)
 	video := string(comment.VideoComment)
 
@@ -59,7 +58,6 @@ func getCommentFromDB(videoindex int) (commentSlice []Comment) {
 	defer resultado.Close()
 	for resultado.Next() {
 		var comment Comment
-		fmt.Printf("AQUI 4")
 		err := resultado.Scan(&comment.IDComment, &comment.BodyComment, &comment.UserComment, &comment.VideoComment, &comment.DateComment)
 		if err != nil {
 			log.Fatal(err)
@@ -76,7 +74,6 @@ comments already inserted.*/
 func clearDBComment() (result bool) {
 	var con *sql.DB
 	con = CreateCon()
-	fmt.Printf("AQUI 5")
 	resultado, err := con.Query("DELETE FROM comment;")
 	if err != nil {
 		log.Fatal(err)
@@ -92,7 +89,6 @@ comments already inserted.*/
 func clearDBCommentUser(user, comment int) (result bool) {
 	var con *sql.DB
 	con = CreateCon()
-	fmt.Printf("AQUI 6")
 	userIndex := string(user)
 	commentIndex := string(comment)
 

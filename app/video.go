@@ -65,7 +65,6 @@ func getAVideoFromDB(id string) (video Video) {
 		log.Fatal(err)
 	}
 	defer resultado.Close()
-	fmt.Printf("AQUI 1NOPE")
 	for resultado.Next() {
 		err := resultado.Scan(&video.IDVideo, &video.IDUser, &video.NameVideo, &video.PathVideo, &video.DescVideo)
 		if err != nil {
@@ -91,7 +90,6 @@ func getVideo6FromDB() (videoSlice []Video) {
 		log.Fatal(err)
 	}
 	defer resultado.Close()
-	fmt.Printf("AQUI 2NOPE")
 
 	for resultado.Next() {
 		var videoA Video
@@ -114,7 +112,6 @@ func getVideoFromDB() (videoSlice []Video) {
 	fmt.Println("Trying to recover videos ...")
 	var con *sql.DB
 	con = CreateCon()
-	fmt.Printf("AQUI 3")
 	resultado, err := con.Query("select id_video,name_video, path_video, desc_video from video")
 	if err != nil {
 
@@ -192,7 +189,9 @@ func PostVideo(w http.ResponseWriter, r *http.Request) {
 	}
 	tempFile.Write(fileBytes)
 
-	staticPath := "http://192.168.1.104:8000"
+	staticPath, _ := getLocalIP()
+	port := ":8000"
+	staticPath = staticPath + port
 	currentPath := strings.Replace(tempFile.Name(), "data/", staticPath+"/data/", -1)
 
 	videoA := VideoConstructor(name, desc, currentPath)

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 
@@ -92,17 +91,14 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 func LogoutHandler(w http.ResponseWriter, r *http.Request) {
 	ClearSession(w)
 	http.Redirect(w, r, "/", 302)
-	fmt.Printf("DEU MERDA")
 }
 
 /*InternalPageHandler as */
 func InternalPageHandler(w http.ResponseWriter, r *http.Request) {
 	userName, _ := GetUserName(r)
 	if userName != "" {
-		fmt.Printf("DEU MERDA")
 		templates.ExecuteTemplate(w, "home.html", userName)
 	} else {
-		fmt.Printf("DEU MERDA")
 		http.Redirect(w, r, "/", 302)
 	}
 }

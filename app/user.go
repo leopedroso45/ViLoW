@@ -4,7 +4,6 @@ import (
 	"crypto/sha1"
 	"database/sql"
 	"encoding/hex"
-	"fmt"
 	"log"
 )
 
@@ -15,7 +14,6 @@ type User struct {
 
 /*GetUserFromID receive the userID from the video */
 func GetUserFromID(id int) (User, error) {
-	fmt.Printf("AQUI 8")
 	var con *sql.DB
 	con = CreateCon()
 	var user User
@@ -44,7 +42,6 @@ func GetUserFromID(id int) (User, error) {
 func GetUser(name, password string) (User, error) {
 	var con *sql.DB
 	con = CreateCon()
-	fmt.Printf("AQUI 9")
 	var user User
 	encPassword := encrypting(password)
 	sqlst := `SELECT user.id_user, user.name_user FROM user WHERE user.name_user= '` + name + `' AND user.password_user= '` + encPassword + `'`
@@ -67,7 +64,6 @@ if no errors occur.*/
 func CreateUser(user User) (result bool) {
 	var con *sql.DB
 	con = CreateCon()
-	fmt.Printf("AQUI 10")
 
 	newPass := encrypting(user.PasswordUser)
 	user.PasswordUser = newPass
@@ -87,7 +83,6 @@ users already inserted.*/
 func clearDBUser() (result bool) {
 	var con *sql.DB
 	con = CreateCon()
-	fmt.Printf("AQUI 11")
 
 	resultado, err := con.Query("DELETE FROM user;")
 	if err != nil {
