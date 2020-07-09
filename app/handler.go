@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"strconv"
@@ -35,18 +34,24 @@ func UploadPageHandler(w http.ResponseWriter, r *http.Request) {
 /*UpVoteHandler as*/
 func UpVoteHandler(w http.ResponseWriter, r *http.Request) {
 	userName, id := GetUserName(r)
-	if userName != "" {
+	if userName == "" && id == "" {
+		log.Println("name: " + userName + "id: " + id)
+		log.Println("caraca")
 		templates.ExecuteTemplate(w, "home.html", userName)
+
 	} else {
 		vars := mux.Vars(r)
-		video := getAVideoFromDB(vars["videoID"])
+		idd := vars["videoID"]
+		video := getAVideoFromDB(idd)
 		idu, _ := strconv.Atoi(id)
 		user, err := GetUserFromID(idu)
 		if err == nil {
 			CreateVote(2, video, user)
+			http.Redirect(w, r, "/internal", 302)
+			return
 		}
-		http.Redirect(w, r, "/internal", 302)
 	}
+	return
 
 }
 
@@ -61,7 +66,8 @@ func DownVoteHandler(w http.ResponseWriter, r *http.Request) {
 		idu, _ := strconv.Atoi(id)
 		user, err := GetUserFromID(idu)
 		if err == nil {
-			CreateVote(1, video, user)
+			vote := CreateVote(1, video, user)
+			log.Printf("VOTE %v", vote)
 		}
 		http.Redirect(w, r, "/internal", 302)
 	}
@@ -72,12 +78,9 @@ func WatchPageHandler(w http.ResponseWriter, r *http.Request) {
 
 	vars := mux.Vars(r)
 	video := getAVideoFromDB(vars["id"])
-	log.Println(video)
 	user, err := GetUserFromID(video.IDUser)
 	if err == nil {
 		page := VideoPageConstructor(video, user)
-		fmt.Println(page)
-
 		templates.ExecuteTemplate(w, "watch.html", page)
 	} else {
 		log.Print(err)

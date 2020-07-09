@@ -37,7 +37,7 @@ func main() {
 	router.PathPrefix("/assets/").Handler(http.StripPrefix("/assets", http.FileServer(http.Dir("./web"))))
 	router.PathPrefix("/data/").Handler(http.StripPrefix("/data", http.FileServer(http.Dir("./data"))))
 	router.HandleFunc("/videos", GetVideo).Methods("GET")
-	router.HandleFunc("/{id}", WatchPageHandler).Methods("POST")
 
+	router.HandleFunc("/{id}", WatchPageHandler).Methods("POST")
 	log.Fatal(http.ListenAndServe(":8000", router))
 }

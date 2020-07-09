@@ -20,7 +20,6 @@ func CreateVote(voteRep int, video Video, user User) (result bool) {
 
 	videoID := strconv.Itoa(video.IDVideo)
 	ratingAction := strconv.Itoa(voteRep)
-
 	resultado, err := con.Query(`INSERT INTO vote (user_id, video_id, rating_action) VALUES ('` + user.IDUser + `', '` + videoID + `', '` + ratingAction + `');`)
 	if err != nil {
 		log.Fatal(err)
