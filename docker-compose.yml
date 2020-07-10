@@ -26,7 +26,7 @@ services:
       - 8000:8000
     depends_on: 
       - "mysql"
-    entrypoint: ./wait-for-it.sh mysql:3306 -t 0 -- go run db_connection.go ip.go Vote.go video.go user.go Comment.go VideoPage.go handler.go session.go feedDB.go main.go
+    entrypoint: ./wait-for-it.sh mysql:3306 -t 0 -- go run db_connection.go ip.go UpdateData.go Vote.go video.go user.go Comment.go VideoPage.go handler.go session.go feedDB.go main.go
     build:
       context: app
       dockerfile: Dockerfile

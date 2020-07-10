@@ -327,7 +327,7 @@ h1, h2, h3, h4, h5, h6, figure {
   float: left;
   width: 100%;
   display: block;
-  background: rgba(255, 255, 255, 0.5);
+  background: #7f7f7f;
   color: #1a1a1a;
 }
 #gtco-header .form-wrap .tab-menu li a:hover {
@@ -336,7 +336,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #gtco-header .form-wrap .tab-menu li.active a {
   display: block;
   padding: 10px 20px 20px 20px;
-  background: #fff;
+  background: #008000;
   color: #09C6AB;
 }
 #gtco-header .form-wrap .tab-menu li.gtco-first a {

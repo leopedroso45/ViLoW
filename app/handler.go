@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"log"
 	"net/http"
 	"strconv"
@@ -31,13 +32,23 @@ func UploadPageHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
+/*VoteHandler as*/
+func VoteHandler(w http.ResponseWriter, r *http.Request) {
+
+	vars := mux.Vars(r)
+	id := vars["videoID"]
+	videoID, _ := strconv.Atoi(id)
+	updated := getUpdatedData(videoID)
+
+	json.NewEncoder(w).Encode(updated)
+	return
+}
+
 /*UpVoteHandler as*/
 func UpVoteHandler(w http.ResponseWriter, r *http.Request) {
 	userName, id := GetUserName(r)
 	if userName == "" && id == "" {
-		log.Println("name: " + userName + "id: " + id)
-		log.Println("caraca")
-		templates.ExecuteTemplate(w, "home.html", userName)
+		templates.ExecuteTemplate(w, "login.html", userName)
 
 	} else {
 		vars := mux.Vars(r)
@@ -58,19 +69,22 @@ func UpVoteHandler(w http.ResponseWriter, r *http.Request) {
 /*DownVoteHandler as*/
 func DownVoteHandler(w http.ResponseWriter, r *http.Request) {
 	userName, id := GetUserName(r)
-	if userName != "" {
-		templates.ExecuteTemplate(w, "home.html", userName)
+	if userName == "" && id == "" {
+		templates.ExecuteTemplate(w, "login.html", userName)
+
 	} else {
 		vars := mux.Vars(r)
-		video := getAVideoFromDB(vars["videoID"])
+		idd := vars["videoID"]
+		video := getAVideoFromDB(idd)
 		idu, _ := strconv.Atoi(id)
 		user, err := GetUserFromID(idu)
 		if err == nil {
-			vote := CreateVote(1, video, user)
-			log.Printf("VOTE %v", vote)
+			CreateVote(1, video, user)
+			http.Redirect(w, r, "/internal", 302)
+			return
 		}
-		http.Redirect(w, r, "/internal", 302)
 	}
+	return
 }
 
 /*WatchPageHandler as*/
@@ -78,10 +92,21 @@ func WatchPageHandler(w http.ResponseWriter, r *http.Request) {
 
 	vars := mux.Vars(r)
 	video := getAVideoFromDB(vars["id"])
+	likes := GetLikesFromID(video.IDVideo)
+	dislikes := GetDislikesFromID(video.IDVideo)
 	user, err := GetUserFromID(video.IDUser)
 	if err == nil {
-		page := VideoPageConstructor(video, user)
-		templates.ExecuteTemplate(w, "watch.html", page)
+		userName, id := GetUserName(r)
+		if userName != "" && id != "" {
+			hasVote := CheckVote(video, id)
+			page := VideoPageConstructor(video, user, likes, dislikes, hasVote)
+			templates.ExecuteTemplate(w, "watch.html", page)
+
+		} else {
+			page := VideoPageConstructor2(video, user, likes, dislikes)
+			templates.ExecuteTemplate(w, "watch.html", page)
+		}
+
 	} else {
 		log.Print(err)
 		templates.ExecuteTemplate(w, "index.html", nil)
