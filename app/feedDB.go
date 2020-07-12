@@ -18,7 +18,7 @@ func feedDBwVideo() (result bool) {
 			//staticPath, _ := getLocalIP()
 			//port := ":8000"
 			//staticPath = staticPath + port
-			staticPath := "http://192.168.43.216:8000"
+			staticPath := "http://192.168.1.104:8000"
 			formatedName := strings.Replace(path, "/app/data/", "", -1)
 			formatedPath := strings.Replace(path, "/app", staticPath, -1)
 
