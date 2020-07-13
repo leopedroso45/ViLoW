@@ -1,6 +1,6 @@
 <p align="center">
 	<!-- ![alt text](https://github.com/leopedroso45/ViLoW/blob/master/app/web/ViLoWofc.png) --> 
-	<a href="#"><img src="https://github.com/leopedroso45/ViLoW/blob/master/app/web/ViLoWofc.png" alt="ViLoW">	
+	<a href="#"><img src="https://github.com/leopedroso45/ViLoW/blob/master/web/ViLoWofc.png" alt="ViLoW">	
 	</a>
 </p>
 
