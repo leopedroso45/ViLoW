@@ -2,6 +2,7 @@ package main
 
 import (
 	"ViLoW/handler"
+	"ViLoW/model"
 	"log"
 	"net/http"
 	"text/template"
@@ -11,7 +12,7 @@ import (
 
 func main() {
 
-	Templates = template.Must(template.ParseGlob("./web/*.html"))
+	handler.Templates = template.Must(template.ParseGlob("./web/*.html"))
 
 	//clearDBVideo()
 	//clearDBUser()
@@ -25,11 +26,11 @@ func main() {
 	router.HandleFunc("/sign", handler.SignHandler).Methods("POST")
 	router.HandleFunc("/login", handler.LoginHandler).Methods("POST")
 	router.HandleFunc("/login", handler.LoginPageHandler).Methods("GET")
-	router.HandleFunc("/loging", handler.handleGoogleLogin)
-	router.HandleFunc("/callback", handler.handleGoogleCallback)
+	router.HandleFunc("/loging", handler.HandleGoogleLogin)
+	router.HandleFunc("/callback", handler.HandleGoogleCallback)
 	router.HandleFunc("/upload", handler.UploadPageHandler).Methods("POST")
 	router.HandleFunc("/logout", handler.LogoutHandler).Methods("POST")
-	router.HandleFunc("/videos", handler.PostVideo).Methods("POST")
+	router.HandleFunc("/videos", model.PostVideo).Methods("POST")
 	router.HandleFunc("/internal", handler.InternalPageHandler)
 
 	router.HandleFunc("/upvote/{videoID}", handler.UpVoteHandler).Methods("POST")
@@ -37,7 +38,7 @@ func main() {
 
 	router.PathPrefix("/assets/").Handler(http.StripPrefix("/assets", http.FileServer(http.Dir("./web"))))
 	router.PathPrefix("/data/").Handler(http.StripPrefix("/data", http.FileServer(http.Dir("./app/data"))))
-	router.HandleFunc("/videos", handler.GetVideo).Methods("GET")
+	router.HandleFunc("/videos", model.GetVideo).Methods("GET")
 
 	router.HandleFunc("/{id}", handler.WatchPageHandler).Methods("POST")
 	log.Fatal(http.ListenAndServe(":8000", router))

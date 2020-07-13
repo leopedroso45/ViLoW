@@ -2,6 +2,7 @@ package handler
 
 import (
 	"ViLoW/model"
+	"ViLoW/oauth"
 	"ViLoW/pagedata"
 	"ViLoW/session"
 	"encoding/json"
@@ -132,17 +133,17 @@ func SignHandler(w http.ResponseWriter, r *http.Request) {
 	redirectTarget := "/"
 	if name != "" && pass != "" && age != "" {
 
-		var user User
+		var user model.User
 		user.NameUser = name
 		user.PasswordUser = pass
 		user.AgeUser = age
-		CreateUser(user)
-		user, err := GetUser(name, pass)
+		model.CreateUser(user)
+		user, err := model.GetUser(name, pass)
 		if err != nil {
 			log.Println(err)
 			return
 		}
-		SetSession(user.IDUser, user.NameUser, w)
+		session.SetSession(user.IDUser, user.NameUser, w)
 		redirectTarget = "/internal"
 	}
 	http.Redirect(w, r, redirectTarget, 302)
@@ -155,9 +156,9 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 	redirectTarget := "/"
 	if name != "" && pass != "" {
 		// .. check credentials ..
-		user, err := GetUser(name, pass)
+		user, err := model.GetUser(name, pass)
 		if err == nil {
-			SetSession(user.IDUser, user.NameUser, w)
+			session.SetSession(user.IDUser, user.NameUser, w)
 			redirectTarget = "/internal"
 		}
 	}
@@ -166,29 +167,31 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 
 /*LogoutHandler as */
 func LogoutHandler(w http.ResponseWriter, r *http.Request) {
-	ClearSession(w)
+	session.ClearSession(w)
 	http.Redirect(w, r, "/", 302)
 }
 
 /*InternalPageHandler as */
 func InternalPageHandler(w http.ResponseWriter, r *http.Request) {
-	userName, _ := GetUserName(r)
+	userName, _ := session.GetUserName(r)
 	if userName != "" {
-		var user UserG
+		var user model.UserG
 		user.Name = userName
-		templates.ExecuteTemplate(w, "home.html", user)
+		Templates.ExecuteTemplate(w, "home.html", user)
 	} else {
 		http.Redirect(w, r, "/", 302)
 	}
 }
 
-func handleGoogleLogin(w http.ResponseWriter, r *http.Request) {
-	url := googleOauthConfig.AuthCodeURL(oauthStateString)
+/*HandleGoogleLogin as */
+func HandleGoogleLogin(w http.ResponseWriter, r *http.Request) {
+	url := oauth.GoogleOauthConfig.AuthCodeURL(oauth.OauthStateString)
 	http.Redirect(w, r, url, http.StatusTemporaryRedirect)
 }
 
-func handleGoogleCallback(w http.ResponseWriter, r *http.Request) {
-	content, err := getUserInfo(r.FormValue("state"), r.FormValue("code"))
+/*HandleGoogleCallback as */
+func HandleGoogleCallback(w http.ResponseWriter, r *http.Request) {
+	content, err := GetUserInfo(r.FormValue("state"), r.FormValue("code"))
 	if err != nil {
 		fmt.Println(err.Error())
 		http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
@@ -196,7 +199,7 @@ func handleGoogleCallback(w http.ResponseWriter, r *http.Request) {
 	}
 
 	//fmt.Fprintf(w, "Content: %s\n", content)
-	var userg UserG
+	var userg model.UserG
 	err = json.Unmarshal([]byte(content), &userg)
 	if err != nil {
 		fmt.Println(err.Error())
@@ -207,12 +210,13 @@ func handleGoogleCallback(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Content: %s\n", userg)
 }
 
-func getUserInfo(state string, code string) ([]byte, error) {
-	if state != oauthStateString {
+/*GetUserInfo as */
+func GetUserInfo(state string, code string) ([]byte, error) {
+	if state != oauth.OauthStateString {
 		return nil, fmt.Errorf("invalid oauth state")
 	}
 
-	token, err := googleOauthConfig.Exchange(oauth2.NoContext, code)
+	token, err := oauth.GoogleOauthConfig.Exchange(oauth2.NoContext, code)
 	if err != nil {
 		return nil, fmt.Errorf("code exchange failed: %s", err.Error())
 	}
