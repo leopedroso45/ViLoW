@@ -1,0 +1,486 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login &mdash; Video Website Template by leopedroso45</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="desc" />
+    <meta name="keywords" content="key1, key2, key3, key4" />
+    <meta name="author" content="leopedroso45" />
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+
+    <!-- Plyr.css -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="./assets/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="./assets/css/icomoon.css">
+    <!-- Themify Icons-->
+    <link rel="stylesheet" href="./assets/css/themify-icons.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="./assets/css/magnific-popup.css">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="./assets/css/bootstrap-datepicker.min.css">
+
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Modernizr JS -->
+    <script src="/assets/js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        body {
+            background: #EEEEEE;
+        }
+
+        .box-info.full {
+            padding: 0px;
+        }
+
+        .box-info:hover {
+            color: #393E48;
+        }
+
+        .box-info {
+            position: relative;
+            padding: 15px;
+            background: #fff;
+            color: #5b5b5b;
+            margin-bottom: 20px;
+            -webkit-transition: All 0.4s ease;
+            -moz-transition: All 0.4s ease;
+            -o-transition: All 0.4s ease;
+            background: #FFFFFF;
+            margin-top: 20px;
+        }
+
+        .box-info .nav-tabs {
+            background: #1B1E24;
+        }
+
+        .box-info .nav-tabs li.active a,
+        .box-info .nav-tabs li.active a:hover,
+        .box-info .nav-tabs li.active a:focus {
+            cursor: default;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            border-bottom: none;
+            background-color: #ffffff;
+            color: #1B1E24;
+        }
+
+        .box-info .nav-tabs li.active a i,
+        .box-info .nav-tabs li.active a:hover i,
+        .box-info .nav-tabs li.active a:focus i {
+            color: #212121;
+        }
+
+        .box-info .nav-tabs li a i {
+            color: #fff;
+        }
+
+        .box-info.full .box-footer {
+            padding: 20px 20px 15px 20px;
+        }
+
+        .box-info .media-list {
+            margin-top: 30px;
+        }
+
+        .box-info .media-list .media {
+            padding: 5px 20px;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .box-info .media-list .media .media-object {
+            width: 50px;
+        }
+
+        .scroll-widget {
+            overflow: hidden;
+            width: auto;
+            height: 325px;
+        }
+
+        .pb-cmnt-container {
+            font-family: Lato;
+            margin-top: 100px;
+        }
+
+        .pb-cmnt-textarea {
+            resize: none;
+            padding: 20px;
+            height: 130px;
+            width: 100%;
+            border: 1px solid #F2F2F2;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="gtco-loader"></div>
+
+    <div id="page">
+
+
+        <!-- <div class="page-inner"> -->
+        <nav class="gtco-nav" role="navigation">
+            <div class="gtco-container">
+
+                <div class="row">
+                    <div class="col-sm-4 col-xs-12">
+                        <div id="gtco-logo"><a href="/">ViloW <em>.</em></a></div>
+                    </div>
+                    <div class="col-xs-8 text-right menu-1">
+                        <form method="POST" action="/logout">
+                            <ul>
+                                <li><a href="destination.html">Get VIP</a></li>
+                                <li><a href="pricing.html">Donate</a></li>
+                                <li class="has-dropdown">
+                                    <a href="/">Photos</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">Europe</a></li>
+                                        <li><a href="#">Asia</a></li>
+                                        <li><a href="#">America</a></li>
+                                        <li><a href="#">Canada</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="submit" class="btn btn-primary" value="Logout" />
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner"
+            style="background-image: url(/assets/images/img_bg_2.jpg)">
+            <div class="overlay"></div>
+            <div class="gtco-container">
+                <div class="row">
+                    <div class="col-md-13 col-md-offset-0 text-center">
+                        <div class="row row-mt-15em">
+                            <div class="col-md-13 col-md-push-1 animate-box" data-animate-effect="fadeInUp">
+
+                                <div class="form-wrap">
+                                    <div class="tab">
+
+                                        <div class="tab-content">
+                                            <div class="tab-content-inner active text-left" data-content="act-menu">
+                                                <h6 style="display: inline">Posted by <h4 style="display: inline">
+                                                        {{.User.NameUser}}</h4>
+                                                </h6>
+                                                <video name="{{.Video.IDVideo}}" class="js-player" id="player"
+                                                    playsinline controls>
+                                                    <source src='{{.Video.PathVideo}}' />
+                                                </video>
+                                            </div>
+                                            <div class="text-left">
+                                                <h3>{{.Video.NameVideo}}</h3>
+                                                <button type="button" class="btn btn-info" data-toggle="collapse"
+                                                    data-target="#demo">SAIBA MAIS</button>
+                                                <ul class="gtco-social-icons pull-right">
+
+                                                    {{if .HasVote}}
+                                                    <li>
+                                                        <div id="likesUpdate"><a class=""><i
+                                                                    class="icon-thumbs-up"></i></a>{{.PositiveCount}}
+                                                        </div>
+                                                    </li>
+                                                    {{else}}
+                                                    <li>
+                                                        <div id="likesUpdate"><a class="like-review"><i
+                                                                    class="icon-thumbs-up"></i></a>{{.PositiveCount}}
+                                                        </div>
+                                                    </li>
+                                                    {{end}}
+                                                    {{if .HasVote}}
+                                                    <li>
+                                                        <div id="dislikeUpdate"><a><i
+                                                                    class="icon-thumbs-down"></i></a>{{.NegativeCount}}
+                                                        </div>
+                                                    </li>
+                                                    {{else}}
+                                                    <li>
+                                                        <div id="dislikeUpdate"><a class="dislike-review"><i
+                                                                    class="icon-thumbs-down"></i></a>{{.NegativeCount}}
+                                                        </div>
+                                                    </li>
+                                                    {{end}}
+                                                    <li><a><i class="icon-share2"></i></a></li>
+                                                    <li><a><i class="icon-flag"></i></a></li>
+                                                </ul>
+                                                <div id="demo" class="collapse">
+                                                    Descrição: {{.Video.DescVideo}}
+                                                </div>
+                                                <hr />
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-8 col-sm-6">
+                                                    Level 2: .col-8 .col-sm-6
+                                                </div>
+                                                <div class="col-4 col-sm-6" style=" overflow:auto;">
+
+
+
+
+                                                    
+
+
+
+                                                    <div class="container bootstrap snippet">
+                                                        <div class="col-sm-6">
+                                                            <!-- Begin tab comment and popular posts -->
+                                                            <div class="box-info full">
+                                                                <!-- Tab comments and popular posts -->
+                                                                <ul class="nav nav-tabs nav-justified">
+                                                                    <li class="active"><a href="#comments"
+                                                                            data-toggle="tab"><i
+                                                                                class="fa fa-comments"></i>Comments</a>
+                                                                    </li>
+                                                                </ul>
+
+                                                                
+
+                                                                <!-- Tab panes -->
+                                                                <div class="tab-content">
+                                                                    <!-- Pane comments -->
+                                                                    <div class="tab-pane active animated fadeInRight"
+                                                                        id="comments">
+                                                                        <!-- Begin scroll wrappper -->
+                                                                        <div class="slimScrollDiv"
+                                                                            style="position: relative; overflow: hidden; width: auto; height: 325px;">
+                                                                            <div class="scroll-widget">
+                                                                                <ul class="media-list">
+                                                                                    <li class="media">
+                                                                                        <a class="pull-left"
+                                                                                            href="#fakelink">
+                                                                                            <img class="media-object"
+                                                                                                src="https://bootdey.com/img/Content/User_for_snippets.png"
+                                                                                                alt="Avatar">
+                                                                                        </a>
+                                                                                        <div class="media-body">
+                                                                                            <h4 class="media-heading"><a
+                                                                                                    href="#fakelink">John
+                                                                                                    Doe</a> <small>Just
+                                                                                                    now</small></h4>
+                                                                                            <p>Lorem ipsum dolor sit
+                                                                                                amet, consectetur
+                                                                                                adipiscing elit</p>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                    <li class="media">
+                                                                                        <a class="pull-left"
+                                                                                            href="#fakelink">
+                                                                                            <img class="media-object"
+                                                                                                src="https://bootdey.com/img/Content/user-453533-fdadfd.png"
+                                                                                                alt="Avatar">
+                                                                                        </a>
+                                                                                        <div class="media-body">
+                                                                                            <h4 class="media-heading"><a
+                                                                                                    href="#fakelink">Agent
+                                                                                                    007</a>
+                                                                                                <small>Yesterday at
+                                                                                                    04:00 AM</small>
+                                                                                            </h4>
+                                                                                            <p>Lorem ipsum dolor sit
+                                                                                                amet, consectetur
+                                                                                                adipiscing elit. Nam
+                                                                                                rhoncus</p>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                    <li class="media">
+                                                                                        <a class="pull-left"
+                                                                                            href="#fakelink">
+                                                                                            <img class="media-object"
+                                                                                                src="https://bootdey.com/img/Content/Twitter_bird_icon.png"
+                                                                                                alt="Avatar">
+                                                                                        </a>
+                                                                                        <div class="media-body">
+                                                                                            <h4 class="media-heading"><a
+                                                                                                    href="#fakelink">Twitter
+                                                                                                    man</a>
+                                                                                                <small>January 17, 2014
+                                                                                                    05:35 PM</small>
+                                                                                            </h4>
+                                                                                            <p>Lorem ipsum dolor sit
+                                                                                                amet, consectetur
+                                                                                                adipiscing elit</p>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                            <div class="slimScrollBar"
+                                                                                style="width: 3px; position: absolute; top: 11px; opacity: 0.4; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; z-index: 99; left: 1px; height: 209.5734126984127px; background: rgb(134, 134, 134);">
+                                                                            </div>
+                                                                            <div class="slimScrollRail"
+                                                                                style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; opacity: 0.3; z-index: 90; left: 1px; background: rgb(51, 51, 51);">
+                                                                            </div>
+                                                                        </div><!-- End div .scroll-widget -->
+                                                                        <div class="box-footer">
+                                                                            <!--<p><a href="#fakelink"><i class="fa fa-share"></i> See all comments</a></p>-->
+                                                                        </div>
+                                                                    </div><!-- End div .tab-pane -->
+
+                                                                    <!-- End div .tab-pane -->
+                                                                </div><!-- End div .tab-content -->
+                                                            </div><!-- End div .box-info .full -->
+                                                            <!-- End tab comment and popular posts -->
+                                                        </div>
+                                                    </div>
+
+
+
+
+
+
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <footer id="gtco-footer" role="contentinfo">
+            <div class="gtco-container">
+                <div class="row copyright">
+                    <div class="col-md-12">
+                        <p class="pull-left">
+                            <small class="block">&copy; 2020 leopedroso45. All Rights Reserved.</small>
+                            <small class="block">Designed by <a href="http://github.com/leopedroso45"
+                                    target="_blank">leopedroso45</a></small>
+                        </p>
+                        <p class="pull-right">
+                        <ul class="gtco-social-icons pull-right">
+                            <li><a href="/"><i class="icon-twitter"></i></a></li>
+                            <li><a href="/"><i class="icon-facebook"></i></a></li>
+                            <li><a href="/"><i class="icon-instagram"></i></a></li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+        <!-- </div> -->
+
+    </div>
+
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+    </div>
+
+    <!-- jQuery -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="/assets/js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="/assets/js/jquery.waypoints.min.js"></script>
+    <!-- Carousel -->
+    <script src="/assets/js/owl.carousel.min.js"></script>
+    <!-- countTo -->
+    <script src="/assets/js/jquery.countTo.js"></script>
+
+    <!-- Stellar Parallax -->
+    <script src="/assets/js/jquery.stellar.min.js"></script>
+
+    <!-- Magnific Popup -->
+    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/js/magnific-popup-options.js"></script>
+
+    <!-- Datepicker -->
+    <script src="/assets/js/bootstrap-datepicker.min.js"></script>
+
+
+    <!-- Main -->
+    <script src="/assets/js/main.js"></script>
+
+</body>
+<!-- Plyr -->
+<script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+<script>
+
+    $(function () {
+        $(document).one('click', '.like-review', function (e) {
+            var objvideo = document.getElementById("player");
+            var videoID = objvideo.getAttribute("name")
+
+            $.ajax({
+                type: 'POST',
+                url: 'upvote/' + videoID,
+                success: function (response, xhr) {
+                    if (xhr.status == 200 || xhr.status == 302) {
+                        var value = document.getElementById('likesUpdate').innerHTML;
+                        var newValue = parseInt(value, 10) + 1;
+                        document.getElementById("likesUpdate").innerHTML = newValue;
+                    }
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        });
+    });
+
+    $(function () {
+        $(document).one('click', '.dislike-review', function (e) {
+            var objvideo = document.getElementById("player");
+            var videoID = objvideo.getAttribute("name")
+
+            $.ajax({
+                type: 'POST',
+                url: 'downvote/' + videoID,
+                success: function (response, xhr) {
+                    if (xhr.status == 200 || xhr.status == 302) {
+                        var value = document.getElementById('dislikeUpdate').innerHTML;
+                        var newValue = parseInt(value, 10) + 1;
+                        document.getElementById("dislikeUpdate").innerHTML = newValue;
+                    }
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const player = Plyr.setup('.js-player');
+    });
+
+</script>
+
+</html>
