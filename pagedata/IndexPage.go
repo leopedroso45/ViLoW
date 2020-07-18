@@ -7,7 +7,6 @@ import (
 /*IndexPage means the index object*/
 type IndexPage struct {
 	User   model.User
-	UserG  model.UserG
 	Videos []model.Video
 	Logged bool
 }
@@ -22,14 +21,6 @@ func IndexPageVideoConstructor(videos []model.Video) (page IndexPage) {
 /*IndexPageConstructorU means the index object*/
 func IndexPageConstructorU(user model.User, videos []model.Video) (page IndexPage) {
 	page.User = user
-	page.Videos = videos
-	page.Logged = true
-	return
-}
-
-/*IndexPageConstructorUG means the index object*/
-func IndexPageConstructorUG(user model.UserG, videos []model.Video) (page IndexPage) {
-	page.UserG = user
 	page.Videos = videos
 	page.Logged = true
 	return

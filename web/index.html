@@ -96,283 +96,293 @@
 			</div>
 		</nav>
 
-			{{if .Logged}}
+		{{if .Logged}}
 
 
-
-			<div id="gtco-subscribe">
-				<div class="gtco-container">
-					<div class="row animate-box">
-						<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-							<h2>Hello, {{.User.NameUser}}</h2>
-							<p>You can search for the specific type of content you want.</p>
-						</div>
-					</div>
-					<div class="row animate-box">
-						<div class="col-md-8 col-md-offset-2">
-							<form class="form-inline">
-								<div class="col-md-6 col-sm-6">
-									<div class="form-group">
-										<input type="email" class="form-control" id="email" placeholder="Your search">
-									</div>
-								</div>
-								<div class="col-md-6 col-sm-6">
-									<button type="submit" class="btn btn-default btn-block">Search</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-
-
-
-
-
-
-
-
-
-			{{else}}
-			<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner"
+		<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner"
 			style="background-image: url(/assets/images/img_bg_2.jpg)">
 			<div class="overlay"></div>
 			<div class="gtco-container">
 				<div class="row">
-					<div class="col-md-12 col-md-offset-0 text-left">
 
+					<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
 
-						<div class="row row-mt-15em">
-							<div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
-								<h1>Want to have access to high quality content?
-
-								</h1>
+						<div class="gtco-container">
+							<div class="row animate-box">
+								<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+									<h2>Hello, {{.User.NameUser}}</h2>
+									<p>You can search for the specific type of content you want.</p>
+								</div>
 							</div>
-							<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
-								<div class="form-wrap">
-									<div class="tab">
+							<div class="row animate-box">
+								<div class="col-md-8 col-md-offset-2">
+									<form class="form-inline">
+										<div class="col-md-6 col-sm-6">
+											<div class="form-group">
+												<input type="email" class="form-control" id="email"
+													placeholder="Your search">
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-6">
+											<button type="submit" class="btn btn-default btn-block">Search</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
 
-										<div class="tab-content">
-											<div class="tab-content-inner active" data-content="signup">
-												<h3>Register</h3>
-												<form method="post" action="/sign">
-													<div class="row form-group">
-														<div class="col-md-12">
-															<label for="name">Your Name</label>
-															<input type="text" id="name" name="name"
-																class="form-control">
-														</div>
-													</div>
-													<div class="row form-group">
-														<div class="col-md-12">
-															<label for="age">Age</label>
-															<input type="number" id="age" name="age"
-																class="form-control">
-														</div>
-													</div>
-													<div class="row form-group">
-														<div class="col-md-12">
-															<label for="password">Password</label>
-															<input type="password" id="password" name="password"
-																class="form-control">
-														</div>
-													</div>
-													<div class="row form-group">
-														<div class="col-md-12">
-															<input type="submit" class="btn btn-primary btn-block"
-																value="Sign in" />
-														</div>
-													</div>
-												</form>
-												<h3>Or just</h3>
+
+
+
+				</div>
+			</div>
+	</div>
+	</header>
+
+
+
+
+
+
+
+
+
+
+
+
+	{{else}}
+	<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner"
+		style="background-image: url(/assets/images/img_bg_2.jpg)">
+		<div class="overlay"></div>
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0 text-left">
+
+
+					<div class="row row-mt-15em">
+						<div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+							<h1>Want to have access to high quality content?
+
+							</h1>
+						</div>
+						<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
+							<div class="form-wrap">
+								<div class="tab">
+
+									<div class="tab-content">
+										<div class="tab-content-inner active" data-content="signup">
+											<h3>Register</h3>
+											<form method="post" action="/sign">
 												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="name">Your Name</label>
+														<input type="text" id="name" name="name" class="form-control">
+													</div>
+												</div>
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="age">Age</label>
+														<input type="number" id="age" name="age" class="form-control">
+													</div>
+												</div>
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="password">Password</label>
+														<input type="password" id="password" name="password"
+															class="form-control">
+													</div>
+												</div>
+												<div class="row form-group">
+													<div class="col-md-12">
+														<input type="submit" class="btn btn-primary btn-block"
+															value="Sign in" />
+													</div>
+												</div>
+											</form>
+											<h4>Or just</h4>
+											<div class="row form-group">
+												<div class="col-md-12">
 													<form method="get" action="/login">
 														<input type="submit" class="btn btn-primary btn-block"
 															value="Log In" />
 													</form>
 												</div>
-												<div class="row form-group">
-													<center>
-														<div class="shadow p-3 mb-5 bg-dark rounded">
-															<a class="btn btn-outline-dark" href="/loging" role="button"
-																style="text-transform:none">
-																<img width="20px"
-																	style="margin-bottom:3px; margin-right:5px"
-																	alt="Google sign-in"
-																	src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
-																Login with Google
-															</a>
-														</div>
-													</center>
-												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-
 							</div>
+
 						</div>
 					</div>
 				</div>
 			</div>
-			{{end}}
-		</header>
+		</div>
+	</header>
+	{{end}}
 
-		<div class="gtco-section">
-			<div class="gtco-container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-						<h2>Most popular videos.</h2>
-						<p>Videos most liked by the community.</p>
-					</div>
-				</div>
-				<div class="row">
-					{{range $index, $element := .Videos}}
-					<div class="col-lg-4 col-md-4 col-sm-6">
-						<a class="fh5co-card-item">
-							<figure>
-								<center>
-									<video width="320" height="240" oncontextmenu="return false;" preload="metadata"
-										controlsList="nodownload" controls>
-										<source src='{{$element.PathVideo}}'>
-										Your browser does not support the video tag.
-									</video>
-								</center>
-							</figure>
-							<div class="fh5co-text">
-								<h2>{{$element.NameVideo}}</h2>
-								<p>{{$element.DescVideo}}</p>
-								<form method="post" action='/{{$element.IDVideo}}'>
-									<input class="btn btn-primary" type="submit" />
-								</form>
-							</div>
-						</a>
-					</div>
+
+	<div class="gtco-section">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+					{{if .Logged}}
+					<h2>Today's videos.</h2>
+					<p>Feel free to add, comment and rate videos. With the Premium option you can monetize them.</p>
+					{{else}}
+
+					<h2>Most popular videos.</h2>
+					<p>Videos most liked by the community.</p>
 					{{end}}
 				</div>
 			</div>
-		</div>
-		{{if .Logged}}
-
-		{{else}}
-		<div id="gtco-features">
-			<div class="gtco-container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
-						<h2>How It Works</h2>
-						<p>By posting content and making other people VIPs, you will earn part of the earnings.</p>
-					</div>
+			<div class="row">
+				{{range $index, $element := .Videos}}
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<a class="fh5co-card-item">
+						<br />
+						<figure>
+							<center>
+								<video width="320" height="240" oncontextmenu="return false;" preload="metadata"
+									controlsList="nodownload" controls>
+									<source src='{{$element.PathVideo}}'>
+									Your browser does not support the video tag.
+								</video>
+							</center>
+						</figure>
+						<div class="fh5co-text">
+							<h2>{{$element.NameVideo}}</h2>
+							<p>{{$element.DescVideo}}</p>
+							<form method="post" action='/{{$element.IDVideo}}'>
+								<input class="btn btn-primary" type="submit" />
+							</form>
+						</div>
+					</a>
 				</div>
-				<div class="row">
-					<div class="col-md-4 col-sm-6">
-						<div class="feature-center animate-box" data-animate-effect="fadeIn">
-							<span class="icon">
-								<i>1</i>
-							</span>
-							<h3>Get VIP access.</h3>
-							<p>You can acquire VIP with the various payment methods we have, from the VIP page or from
-								the page of another member who is a vip (so you will be supporting the same).</p>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6">
-						<div class="feature-center animate-box" data-animate-effect="fadeIn">
-							<span class="icon">
-								<i>2</i>
-							</span>
-							<h3>Post fun content.</h3>
-							<p>Whether you're a VIP or not, you can publish videos, but you can only monetize them if
-								you have the VIP option enabled in your account.</p>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6">
-						<div class="feature-center animate-box" data-animate-effect="fadeIn">
-							<span class="icon">
-								<i>3</i>
-							</span>
-							<h3>Make money.</h3>
-							<p>If you bring in new VIP members through your monetized videos, you will earn a % of
-								earnings.</p>
-						</div>
-					</div>
-
-
-				</div>
+				{{end}}
 			</div>
 		</div>
-		{{end}}
+	</div>
+	{{if .Logged}}
 
-		<footer id="gtco-footer" role="contentinfo">
-			<div class="gtco-container">
-				<div class="row row-p	b-md">
-
-					<div class="col-md-4">
-						<div class="gtco-widget">
-							<h3>About Us</h3>
-							<p>:)</p>
-						</div>
+	{{else}}
+	<div id="gtco-features">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
+					<h2>How It Works</h2>
+					<p>By posting content and making other people VIPs, you will earn part of the earnings.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i>1</i>
+						</span>
+						<h3>Get VIP access.</h3>
+						<p>You can acquire VIP with the various payment methods we have, from the VIP page or from
+							the page of another member who is a vip (so you will be supporting the same).</p>
 					</div>
-
-					<div class="col-md-2 col-md-push-1">
-						<div class="gtco-widget">
-							<h3>Partners</h3>
-							<ul class="gtco-footer-links">
-								<li><a href="/">1 - Partner</a></li>
-								<li><a href="/">2 - Partner</a></li>
-								<li><a href="/">3 - Partner</a></li>
-								<li><a href="/">4 - Partner</a></li>
-								<li><a href="/">5 - Partner</a></li>
-							</ul>
-						</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i>2</i>
+						</span>
+						<h3>Post fun content.</h3>
+						<p>Whether you're a VIP or not, you can publish videos, but you can only monetize them if
+							you have the VIP option enabled in your account.</p>
 					</div>
-
-					<div class="col-md-2 col-md-push-1">
-						<div class="gtco-widget">
-							<h3>Partners</h3>
-							<ul class="gtco-footer-links">
-								<li><a href="/">1 - Partner</a></li>
-								<li><a href="/">2 - Partner</a></li>
-								<li><a href="/">3 - Partner</a></li>
-								<li><a href="/">4 - Partner</a></li>
-								<li><a href="/">5 - Partner</a></li>
-							</ul>
-						</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i>3</i>
+						</span>
+						<h3>Make money.</h3>
+						<p>If you bring in new VIP members through your monetized videos, you will earn a % of
+							earnings.</p>
 					</div>
-
-					<div class="col-md-3 col-md-push-1">
-						<div class="gtco-widget">
-							<h3>Get In Touch</h3>
-							<ul class="gtco-quick-contact">
-								<li><a href="/"><i class="icon-phone"></i> +55 55 9 9999-9999</a></li>
-								<li><a href="/"><i class="icon-mail2"></i> test@tes.com</a></li>
-								<li><a href="/"><i class="icon-skype"></i> test</a></li>
-							</ul>
-						</div>
-					</div>
-
 				</div>
 
-				<div class="row copyright">
-					<div class="col-md-12">
-						<p class="pull-left">
-							<small class="block">&copy; 2020 leopedroso45. All Rights Reserved.</small>
-							<small class="block">Designed by <a href="http://github.com/leopedroso45"
-									target="_blank">leopedroso45</a></small>
-						</p>
-						<p class="pull-right">
-						<ul class="gtco-social-icons pull-right">
-							<li><a href="/"><i class="icon-twitter"></i></a></li>
-							<li><a href="/"><i class="icon-facebook"></i></a></li>
-							<li><a href="/"><i class="icon-instagram"></i></a></li>
+
+			</div>
+		</div>
+	</div>
+	{{end}}
+
+	<footer id="gtco-footer" role="contentinfo">
+		<div class="gtco-container">
+			<div class="row row-p	b-md">
+
+				<div class="col-md-4">
+					<div class="gtco-widget">
+						<h3>About Us</h3>
+						<p>:)</p>
+					</div>
+				</div>
+
+				<div class="col-md-2 col-md-push-1">
+					<div class="gtco-widget">
+						<h3>Partners</h3>
+						<ul class="gtco-footer-links">
+							<li><a href="/">1 - Partner</a></li>
+							<li><a href="/">2 - Partner</a></li>
+							<li><a href="/">3 - Partner</a></li>
+							<li><a href="/">4 - Partner</a></li>
+							<li><a href="/">5 - Partner</a></li>
 						</ul>
-						</p>
+					</div>
+				</div>
+
+				<div class="col-md-2 col-md-push-1">
+					<div class="gtco-widget">
+						<h3>Partners</h3>
+						<ul class="gtco-footer-links">
+							<li><a href="/">1 - Partner</a></li>
+							<li><a href="/">2 - Partner</a></li>
+							<li><a href="/">3 - Partner</a></li>
+							<li><a href="/">4 - Partner</a></li>
+							<li><a href="/">5 - Partner</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-md-push-1">
+					<div class="gtco-widget">
+						<h3>Get In Touch</h3>
+						<ul class="gtco-quick-contact">
+							<li><a href="/"><i class="icon-phone"></i> +55 55 9 9999-9999</a></li>
+							<li><a href="/"><i class="icon-mail2"></i> test@tes.com</a></li>
+							<li><a href="/"><i class="icon-skype"></i> test</a></li>
+						</ul>
 					</div>
 				</div>
 
 			</div>
-		</footer>
-		<!-- </div> -->
+
+			<div class="row copyright">
+				<div class="col-md-12">
+					<p class="pull-left">
+						<small class="block">&copy; 2020 leopedroso45. All Rights Reserved.</small>
+						<small class="block">Designed by <a href="http://github.com/leopedroso45"
+								target="_blank">leopedroso45</a></small>
+					</p>
+					<p class="pull-right">
+					<ul class="gtco-social-icons pull-right">
+						<li><a href="/"><i class="icon-twitter"></i></a></li>
+						<li><a href="/"><i class="icon-facebook"></i></a></li>
+						<li><a href="/"><i class="icon-instagram"></i></a></li>
+					</ul>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	<!-- </div> -->
 
 	</div>
 

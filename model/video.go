@@ -197,7 +197,7 @@ func PostVideo(w http.ResponseWriter, r *http.Request) {
 	//port := ":8000"
 	//staticPath = staticPath + port
 
-	staticPath := "http://192.168.43.216:8000"
+	staticPath := "http://192.168.1.100:8000"
 	currentPath := strings.Replace(tempFile.Name(), "app/data/", staticPath+"/data/", -1)
 
 	videoA := VideoConstructor(name, desc, currentPath)

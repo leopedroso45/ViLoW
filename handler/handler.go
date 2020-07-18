@@ -2,19 +2,15 @@ package handler
 
 import (
 	"ViLoW/model"
-	"ViLoW/oauth"
 	"ViLoW/pagedata"
 	"ViLoW/session"
 	"encoding/json"
-	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"strconv"
 	"text/template"
 
 	"github.com/gorilla/mux"
-	"golang.org/x/oauth2"
 )
 
 /*Templates var */
@@ -199,56 +195,4 @@ func InternalPageHandler(w http.ResponseWriter, r *http.Request) {
 	} else {
 		http.Redirect(w, r, "/", 302)
 	}
-}
-
-/*HandleGoogleLogin as */
-func HandleGoogleLogin(w http.ResponseWriter, r *http.Request) {
-	url := oauth.GoogleOauthConfig.AuthCodeURL(oauth.OauthStateString)
-	http.Redirect(w, r, url, http.StatusTemporaryRedirect)
-}
-
-/*HandleGoogleCallback as */
-func HandleGoogleCallback(w http.ResponseWriter, r *http.Request) {
-	content, err := GetUserInfo(r.FormValue("state"), r.FormValue("code"))
-	if err != nil {
-		fmt.Println(err.Error())
-		http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
-		return
-	}
-
-	//fmt.Fprintf(w, "Content: %s\n", content)
-	var userg model.UserG
-	err = json.Unmarshal([]byte(content), &userg)
-	if err != nil {
-		fmt.Println(err.Error())
-		http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
-		return
-	}
-	log.Println(userg)
-	fmt.Fprintf(w, "Content: %s\n", userg)
-}
-
-/*GetUserInfo as */
-func GetUserInfo(state string, code string) ([]byte, error) {
-	if state != oauth.OauthStateString {
-		return nil, fmt.Errorf("invalid oauth state")
-	}
-
-	token, err := oauth.GoogleOauthConfig.Exchange(oauth2.NoContext, code)
-	if err != nil {
-		return nil, fmt.Errorf("code exchange failed: %s", err.Error())
-	}
-
-	response, err := http.Get("https://www.googleapis.com/oauth2/v2/userinfo?access_token=" + token.AccessToken)
-	if err != nil {
-		return nil, fmt.Errorf("failed getting user info: %s", err.Error())
-	}
-
-	defer response.Body.Close()
-	contents, err := ioutil.ReadAll(response.Body)
-	if err != nil {
-		return nil, fmt.Errorf("failed reading response body: %s", err.Error())
-	}
-
-	return contents, nil
 }

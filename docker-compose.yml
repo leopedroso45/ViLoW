@@ -21,7 +21,7 @@ services:
   app:
     container_name: app
     volumes:
-      - c:/data:/app/data/
+      - c:/data:/app/app/data/
     ports:
       - 8000:8000
     depends_on: 

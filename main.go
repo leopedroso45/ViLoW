@@ -26,8 +26,6 @@ func main() {
 	router.HandleFunc("/sign", handler.SignHandler).Methods("POST")
 	router.HandleFunc("/login", handler.LoginHandler).Methods("POST")
 	router.HandleFunc("/login", handler.LoginPageHandler).Methods("GET")
-	router.HandleFunc("/loging", handler.HandleGoogleLogin)
-	router.HandleFunc("/callback", handler.HandleGoogleCallback)
 	router.HandleFunc("/upload", handler.UploadPageHandler).Methods("POST")
 	router.HandleFunc("/logout", handler.LogoutHandler).Methods("GET")
 	router.HandleFunc("/videos", model.PostVideo).Methods("POST")
@@ -37,7 +35,7 @@ func main() {
 	router.HandleFunc("/downvote/{videoID}", handler.DownVoteHandler).Methods("POST")
 
 	router.PathPrefix("/assets/").Handler(http.StripPrefix("/assets", http.FileServer(http.Dir("./web"))))
-	router.PathPrefix("/data/").Handler(http.StripPrefix("/data", http.FileServer(http.Dir("./app/data"))))
+	router.PathPrefix("/data/").Handler(http.StripPrefix("/data/", http.FileServer(http.Dir("./app/data"))))
 	router.HandleFunc("/videos", model.GetVideo).Methods("GET")
 
 	router.HandleFunc("/{id}", handler.WatchPageHandler).Methods("POST")
