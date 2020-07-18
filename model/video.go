@@ -178,6 +178,8 @@ func PostVideo(w http.ResponseWriter, r *http.Request) {
 	}
 	defer file.Close()
 
+	//remove handler.filename special characters
+
 	tempFile, err := ioutil.TempFile("./app/data", handler.Filename+"*.mp4")
 	if err != nil {
 		fmt.Println(err)
