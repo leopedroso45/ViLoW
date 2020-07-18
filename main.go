@@ -29,7 +29,7 @@ func main() {
 	router.HandleFunc("/loging", handler.HandleGoogleLogin)
 	router.HandleFunc("/callback", handler.HandleGoogleCallback)
 	router.HandleFunc("/upload", handler.UploadPageHandler).Methods("POST")
-	router.HandleFunc("/logout", handler.LogoutHandler).Methods("POST")
+	router.HandleFunc("/logout", handler.LogoutHandler).Methods("GET")
 	router.HandleFunc("/videos", model.PostVideo).Methods("POST")
 	router.HandleFunc("/internal", handler.InternalPageHandler)
 

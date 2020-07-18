@@ -22,8 +22,26 @@ var Templates *template.Template
 
 /*IndexPageHandler as */
 func IndexPageHandler(w http.ResponseWriter, r *http.Request) {
-	videos := model.GetVideo6FromDB()
-	Templates.ExecuteTemplate(w, "index.html", videos)
+
+	userName, id := session.GetUserName(r)
+	if userName == "" && id == "" {
+		videos := model.GetVideo6FromDB()
+		res := pagedata.IndexPageVideoConstructor(videos)
+		Templates.ExecuteTemplate(w, "index.html", res)
+		return
+	} else {
+		//refatore
+		videos := model.GetVideoFromDB()
+		idu, _ := strconv.Atoi(id)
+		user, err := model.GetUserFromID(idu)
+		if err == nil {
+			res := pagedata.IndexPageConstructorU(user, videos)
+			Templates.ExecuteTemplate(w, "index.html", res)
+			return
+		}
+		//refatore
+
+	}
 }
 
 /*LoginPageHandler as */

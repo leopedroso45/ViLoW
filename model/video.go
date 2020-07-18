@@ -178,7 +178,7 @@ func PostVideo(w http.ResponseWriter, r *http.Request) {
 	}
 	defer file.Close()
 
-	tempFile, err := ioutil.TempFile("data", handler.Filename+"*.mp4")
+	tempFile, err := ioutil.TempFile("./app/data", handler.Filename+"*.mp4")
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -197,8 +197,8 @@ func PostVideo(w http.ResponseWriter, r *http.Request) {
 	//port := ":8000"
 	//staticPath = staticPath + port
 
-	staticPath := "http://192.168.1.104:8000"
-	currentPath := strings.Replace(tempFile.Name(), "data/", staticPath+"/data/", -1)
+	staticPath := "http://192.168.43.216:8000"
+	currentPath := strings.Replace(tempFile.Name(), "app/data/", staticPath+"/data/", -1)
 
 	videoA := VideoConstructor(name, desc, currentPath)
 
