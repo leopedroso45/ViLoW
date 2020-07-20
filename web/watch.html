@@ -442,11 +442,10 @@
                 type: 'POST',
                 url: 'upvote/' + videoID,
                 success: function (response, xhr) {
-                    if (xhr.status == 200 || xhr.status == 302) {
                         var value = document.getElementById('likesUpdate').innerHTML;
                         var newValue = parseInt(value, 10) + 1;
                         document.getElementById("likesUpdate").innerHTML = newValue;
-                    }
+                        document.location.reload(true); 
                 },
                 error: function () {
                     alert("error");
@@ -464,11 +463,10 @@
                 type: 'POST',
                 url: 'downvote/' + videoID,
                 success: function (response, xhr) {
-                    if (xhr.status == 200 || xhr.status == 302) {
                         var value = document.getElementById('dislikeUpdate').innerHTML;
                         var newValue = parseInt(value, 10) + 1;
                         document.getElementById("dislikeUpdate").innerHTML = newValue;
-                    }
+                        document.location.reload(true);
                 },
                 error: function () {
                     alert("error");
