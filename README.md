@@ -24,11 +24,6 @@
 - [Docker](https://docs.docker.com/)
 - [Docker-compose](https://docs.docker.com/compose/install/)
 
-or
-
-- [Go](https://golang.org/dl/)
-- [mySQL](https://www.mysql.com/downloads/)
-
 ### Installing
 
 - After installing the tools mentioned above you are ready to run the application and / or contribute to the project.
