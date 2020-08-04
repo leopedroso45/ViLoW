@@ -34,7 +34,7 @@
 - By default, the volume folder where videos should be stored is **C:\data**, but you can easily modify this in the Docker-compose file.
 
 - Now you can run: 
-```docker-compose run --build```
+```docker-compose up --build```
 
 ## Built With
 
