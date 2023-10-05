@@ -2,7 +2,7 @@ version: '3.8'
 services:
   mysql:
     container_name: mysql
-    image: mysql:latest
+    image: percona:latest
     ports:
       - "3306:3306"
     volumes:
@@ -11,6 +11,7 @@ services:
       - MYSQL_USER=root
       - MYSQL_DATABASE=videos
       - MYSQL_ROOT_PASSWORD=password
+    command: --explicit_defaults_for_timestamp=1
   phpmyadmin:
     container_name: phpmyadmin
     image: phpmyadmin/phpmyadmin:latest
